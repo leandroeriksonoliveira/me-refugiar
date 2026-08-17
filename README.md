@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Me Refugiar — Congresso para Mulheres
 
-## Getting Started
+Site oficial do congresso idealizado e ministrado por **Renata Vitorino Coelho**. Construído com Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion e integração de pagamentos via API do Asaas (PIX e cartão de crédito).
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router) + TypeScript
+- Tailwind CSS 4
+- Lucide Icons + Framer Motion
+- Asaas API (`/api/checkout` e `/api/webhooks/asaas`)
+- Pronto para deploy na Vercel
+
+## Primeiros passos
 
 ```bash
+cp .env.example .env.local
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Variáveis de ambiente
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Variável | Uso |
+| --- | --- |
+| `ASAAS_API_KEY` | Chave de API do Asaas (sandbox ou produção) |
+| `ASAAS_API_URL` | `https://api-sandbox.asaas.com` ou `https://api.asaas.com` |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | Número de suporte com DDI, ex: `5511999999999` |
 
-## Learn More
+Opcional: `ASAAS_WEBHOOK_TOKEN` (validado no header `asaas-access-token`) e `NEXT_PUBLIC_SITE_URL` para SEO.
 
-To learn more about Next.js, take a look at the following resources:
+## Pagamentos Asaas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Crie uma conta no [sandbox](https://sandbox.asaas.com/) e gere a API Key.
+2. Configure o webhook para `https://seu-dominio/api/webhooks/asaas` com os eventos de cobrança.
+3. O checkout cria/reutiliza o cliente, gera a cobrança e, no PIX, devolve QR Code + copia e cola.
+4. O cartão é processado imediatamente no servidor. Os dados do cartão **não são persistidos**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Conteúdo editável
 
-## Deploy on Vercel
+Textos, lotes, programação, FAQ, vídeos e endereço ficam em `lib/event.ts`. Os IDs de YouTube da galeria são placeholders — troque pelos vídeos oficiais do congresso.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy na Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Importe o repositório na Vercel.
+2. Cadastre as variáveis de ambiente.
+3. Faça o deploy. O projeto já usa as convenções do App Router e não precisa de configuração extra de servidor.
