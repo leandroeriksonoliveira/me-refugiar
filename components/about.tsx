@@ -68,6 +68,19 @@ export function About() {
           <FadeIn delay={0.1}>
             <p className="text-xs tracking-[0.28em] text-gold uppercase">A idealizadora</p>
             <h3 className="mt-3 font-serif text-4xl text-earth">{siteConfig.speaker}</h3>
+            <a
+              href={siteConfig.social.instagram}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex items-center gap-2 text-sm text-velvet transition hover:text-gold"
+            >
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" />
+              </svg>
+              @renatavco
+            </a>
             <div className="gold-rule my-6 w-24" />
             <div className="space-y-4 text-[15px] leading-relaxed text-muted">
               <p>

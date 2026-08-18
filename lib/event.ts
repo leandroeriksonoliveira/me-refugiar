@@ -11,7 +11,7 @@ export const siteConfig = {
   whatsappMessage:
     "Olá! Gostaria de saber mais sobre o Congresso Me Refugiar.",
   social: {
-    instagram: "https://instagram.com/merefugiar",
+    instagram: "https://www.instagram.com/renatavco/",
     youtube: "https://youtube.com/@merefugiar",
     facebook: "https://facebook.com/merefugiar",
   },
