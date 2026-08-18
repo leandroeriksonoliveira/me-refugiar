@@ -15,20 +15,20 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: 80,
-          background: "linear-gradient(135deg, #5C2A35 0%, #3F2C24 55%, #8D3D4D 100%)",
-          color: "#F7F0E6",
+          background: "linear-gradient(135deg, #583949 0%, #3d2833 55%, #b54a1e 100%)",
+          color: "#e8c9bf",
         }}
       >
-        <div style={{ fontSize: 22, letterSpacing: 8, textTransform: "uppercase", color: "#E6D3A3" }}>
+        <div style={{ fontSize: 22, letterSpacing: 8, textTransform: "uppercase", color: "#e8c9bf" }}>
           Congresso para Mulheres
         </div>
         <div style={{ fontSize: 96, fontFamily: "Georgia, serif", marginTop: 16, lineHeight: 0.95 }}>
           Me Refugiar
         </div>
-        <div style={{ fontSize: 28, marginTop: 24, color: "#E8C8C6", maxWidth: 780 }}>
+        <div style={{ fontSize: 28, marginTop: 24, color: "#dbb0a0", maxWidth: 780 }}>
           Venha descansar. Encontre refúgio. Renove a sua identidade em Deus.
         </div>
-        <div style={{ marginTop: 40, fontSize: 22, color: "#C4A35A" }}>
+        <div style={{ marginTop: 40, fontSize: 22, color: "#e9b586" }}>
           Com Renata Vitorino Coelho · 12–14 SET 2026
         </div>
       </div>

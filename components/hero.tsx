@@ -32,9 +32,16 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="mt-4 max-w-3xl font-serif text-5xl leading-[0.95] text-cream sm:text-7xl lg:text-8xl"
+          className="mt-5 max-w-lg"
         >
-          Me Refugiar
+          <Image
+            src="/brand/logo-full-light.png"
+            alt="Me Refugiar — Ministério de Mulheres"
+            width={900}
+            height={587}
+            priority
+            className="h-auto w-[min(100%,22rem)] sm:w-[26rem]"
+          />
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 24 }}
@@ -62,7 +69,7 @@ export function Hero() {
         >
           <a
             href="#inscricao"
-            className="inline-flex items-center justify-center rounded-full bg-gold px-8 py-3.5 text-sm font-semibold tracking-wide text-earth uppercase transition hover:bg-gold-soft"
+            className="inline-flex items-center justify-center rounded-full bg-velvet px-8 py-3.5 text-sm font-semibold tracking-wide text-cream uppercase transition hover:bg-earth"
           >
             Garantir Minha Vaga
           </a>

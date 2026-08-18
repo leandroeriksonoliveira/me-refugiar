@@ -1,28 +1,62 @@
-export function Logo({ className = "", light = false }: { className?: string; light?: boolean }) {
+import Image from "next/image";
+import Link from "next/link";
+
+type LogoProps = {
+  className?: string;
+  light?: boolean;
+  variant?: "nav" | "full" | "mark";
+};
+
+export function Logo({ className = "", light = false, variant = "nav" }: LogoProps) {
+  const alt = "Me Refugiar — Ministério de Mulheres";
+
+  if (variant === "full") {
+    return (
+      <Link href="/" className={`inline-block ${className}`}>
+        <Image
+          src={light ? "/brand/logo-full-light.png" : "/brand/logo-full.png"}
+          alt={alt}
+          width={900}
+          height={587}
+          className="h-auto w-[180px] sm:w-[220px]"
+          priority
+        />
+      </Link>
+    );
+  }
+
+  if (variant === "mark") {
+    return (
+      <Link href="/" className={`inline-block ${className}`}>
+        <Image
+          src={light ? "/brand/logo-mark-light.png" : "/brand/logo-mark.png"}
+          alt={alt}
+          width={480}
+          height={664}
+          className="h-12 w-auto"
+        />
+      </Link>
+    );
+  }
+
   return (
-    <a href="#inicio" className={`group inline-flex items-center gap-3 ${className}`}>
-      <span
-        className={`grid h-10 w-10 place-items-center rounded-full border ${
-          light ? "border-gold-soft/50 text-gold-soft" : "border-gold/60 text-velvet"
-        }`}
-      >
-        <svg viewBox="0 0 32 32" className="h-5 w-5" fill="none" aria-hidden>
-          <path
-            d="M16 5c4 4.2 7 8.2 7 12.2A7 7 0 1 1 9 17.2C9 13.2 12 9.2 16 5Z"
-            stroke="currentColor"
-            strokeWidth="1.4"
-          />
-          <circle cx="16" cy="18" r="1.4" fill="currentColor" />
-        </svg>
-      </span>
-      <span className="leading-none">
-        <span className={`block font-serif text-xl tracking-wide ${light ? "text-cream" : "text-earth"}`}>
-          Me Refugiar
-        </span>
-        <span className={`block text-[10px] tracking-[0.22em] uppercase ${light ? "text-gold-soft" : "text-gold"}`}>
-          Congresso para Mulheres
-        </span>
-      </span>
-    </a>
+    <Link href="/" className={`inline-flex items-center gap-2.5 ${className}`}>
+      <Image
+        src={light ? "/brand/logo-mark-light.png" : "/brand/logo-mark.png"}
+        alt=""
+        width={480}
+        height={664}
+        className="h-11 w-auto sm:h-12"
+        priority
+      />
+      <Image
+        src={light ? "/brand/logo-wordmark-light.png" : "/brand/logo-wordmark.png"}
+        alt={alt}
+        width={800}
+        height={211}
+        className="h-8 w-auto sm:h-9"
+        priority
+      />
+    </Link>
   );
 }

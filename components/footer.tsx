@@ -10,7 +10,7 @@ export function Footer() {
     <footer id="contato" className="bg-earth text-cream">
       <Container className="grid gap-12 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
-          <Logo light />
+          <Logo light variant="full" />
           <p className="mt-5 max-w-md text-sm leading-relaxed text-blush/80">
             {siteConfig.description}
           </p>

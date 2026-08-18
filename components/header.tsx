@@ -31,7 +31,7 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-8">
         <Logo light={!scrolled && !open} />
 
         <nav className="hidden items-center gap-8 lg:flex">
