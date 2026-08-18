@@ -49,13 +49,14 @@ export function About() {
 
         <div className="mt-20 grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <FadeIn>
-            <div className="relative overflow-hidden rounded-[2rem]">
+            <div className="relative aspect-square overflow-hidden rounded-[2rem]">
               <Image
-                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1400&q=80"
-                alt={`Retrato institucional de ${siteConfig.speaker}`}
-                width={900}
-                height={1100}
-                className="h-full w-full object-cover"
+                src="/images/renata-vitorino-coelho.png"
+                alt={`${siteConfig.speaker}, idealizadora do Congresso Me Refugiar`}
+                width={1200}
+                height={1200}
+                className="h-full w-full object-cover object-[center_20%]"
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-earth/70 via-transparent to-transparent" />
               <p className="absolute bottom-6 left-6 font-serif text-2xl text-cream">
