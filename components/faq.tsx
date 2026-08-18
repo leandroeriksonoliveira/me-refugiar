@@ -12,7 +12,7 @@ export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="bg-cream py-24 sm:py-32">
+    <section className="bg-cream py-16 sm:py-24 md:py-32">
       <Container>
         <FadeIn>
           <SectionHeading
@@ -26,14 +26,14 @@ export function FAQ() {
           {faqs.map((item, index) => {
             const isOpen = open === index;
             return (
-              <div key={item.question} className="px-6">
+              <div key={item.question} className="px-4 sm:px-6">
                 <button
                   type="button"
-                  className="flex w-full items-center justify-between gap-4 py-5 text-left"
+                  className="flex w-full items-start justify-between gap-3 py-4 text-left sm:items-center sm:gap-4 sm:py-5"
                   onClick={() => setOpen(isOpen ? null : index)}
                   aria-expanded={isOpen}
                 >
-                  <span className="font-serif text-xl text-earth">{item.question}</span>
+                  <span className="font-serif text-lg leading-snug text-earth sm:text-xl">{item.question}</span>
                   <ChevronDown
                     className={`shrink-0 text-gold transition ${isOpen ? "rotate-180" : ""}`}
                     size={20}

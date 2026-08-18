@@ -32,12 +32,23 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   background: var(--cream);
   color: var(--ink);
   font-family: var(--font-outfit), sans-serif;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
 }
 
 ::selection {
@@ -74,9 +85,16 @@ body {
 .ornament::before,
 .ornament::after {
   content: "";
-  width: 3.5rem;
+  width: 2.25rem;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+@media (min-width: 640px) {
+  .ornament::before,
+  .ornament::after {
+    width: 3.5rem;
+  }
 }
 
 @keyframes hero-pan {

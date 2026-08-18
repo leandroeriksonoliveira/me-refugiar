@@ -8,7 +8,7 @@ import { getWhatsAppUrl, siteConfig } from "@/lib/event";
 export function Footer() {
   return (
     <footer id="contato" className="bg-earth text-cream">
-      <Container className="grid gap-12 py-16 md:grid-cols-4">
+      <Container className="grid gap-10 py-12 sm:gap-12 sm:py-16 md:grid-cols-4">
         <div className="md:col-span-2">
           <Logo light variant="full" />
           <p className="mt-5 max-w-md text-sm leading-relaxed text-blush/80">
@@ -82,7 +82,7 @@ export function Footer() {
       </Container>
 
       <div className="border-t border-cream/10">
-        <Container className="flex flex-col gap-2 py-6 text-xs text-blush/60 sm:flex-row sm:justify-between">
+        <Container className="flex flex-col gap-2 py-6 pb-[calc(5.5rem+env(safe-area-inset-bottom))] text-xs text-blush/60 sm:flex-row sm:justify-between sm:pb-6">
           <p>
             © {new Date().getFullYear()} {siteConfig.name}. Todos os direitos reservados.
           </p>

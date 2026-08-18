@@ -149,7 +149,7 @@ export function Registration() {
   const confirmed = paidStatuses.has(paymentStatus);
 
   return (
-    <section id="inscricao" className="bg-burgundy py-24 text-cream sm:py-32">
+    <section id="inscricao" className="bg-burgundy py-16 text-cream sm:py-24 md:py-32">
       <Container>
         <FadeIn>
           <SectionHeading
@@ -161,7 +161,7 @@ export function Registration() {
         </FadeIn>
 
         {result ? (
-          <FadeIn className="mx-auto mt-14 max-w-2xl rounded-[2rem] bg-cream p-8 text-earth">
+          <FadeIn className="mx-auto mt-10 max-w-2xl rounded-[1.5rem] bg-cream p-5 text-earth sm:mt-14 sm:rounded-[2rem] sm:p-8">
             {confirmed || (result.billingType === "CREDIT_CARD" && paidStatuses.has(result.status)) ? (
               <div className="text-center">
                 <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-velvet text-cream">
@@ -187,7 +187,7 @@ export function Registration() {
                 <img
                   src={`data:image/png;base64,${result.pix.encodedImage}`}
                   alt="QR Code PIX para pagamento da inscrição"
-                  className="mx-auto mt-6 h-56 w-56 rounded-2xl border border-gold/20 bg-white p-3"
+                  className="mx-auto mt-6 h-44 w-44 rounded-2xl border border-gold/20 bg-white p-3 sm:h-56 sm:w-56"
                 />
                 <button
                   type="button"
@@ -214,14 +214,14 @@ export function Registration() {
             )}
           </FadeIn>
         ) : (
-          <form onSubmit={onSubmit} className="mt-14 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <form onSubmit={onSubmit} className="mt-10 grid gap-6 sm:mt-14 sm:gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="space-y-4">
               {tickets.map((ticket) => {
                 const selected = form.ticketId === ticket.id;
                 return (
                   <label
                     key={ticket.id}
-                    className={`block cursor-pointer rounded-[1.6rem] border p-6 transition ${
+                    className={`block cursor-pointer rounded-[1.25rem] border p-4 transition sm:rounded-[1.6rem] sm:p-6 ${
                       selected
                         ? "border-gold bg-cream text-earth"
                         : "border-cream/15 bg-white/5 hover:border-gold/40"
@@ -234,24 +234,24 @@ export function Registration() {
                       checked={selected}
                       onChange={() => update("ticketId", ticket.id)}
                     />
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+                      <div className="min-w-0">
                         <p className={`text-[11px] tracking-[0.2em] uppercase ${selected ? "text-gold" : "text-gold-soft"}`}>
                           {ticket.badge}
                         </p>
-                        <h3 className="mt-1 font-serif text-2xl">{ticket.name}</h3>
+                        <h3 className="mt-1 font-serif text-xl sm:text-2xl">{ticket.name}</h3>
                         <p className={`mt-2 text-sm ${selected ? "text-muted" : "text-blush/80"}`}>
                           {ticket.description}
                         </p>
                       </div>
-                      <p className="font-serif text-2xl">{formatCurrency(ticket.price)}</p>
+                      <p className="shrink-0 font-serif text-2xl">{formatCurrency(ticket.price)}</p>
                     </div>
                   </label>
                 );
               })}
             </div>
 
-            <div className="rounded-[2rem] bg-cream p-6 text-earth sm:p-8">
+            <div className="rounded-[1.5rem] bg-cream p-4 text-earth sm:rounded-[2rem] sm:p-6 md:p-8">
               <div className="grid gap-4 sm:grid-cols-2">
                 <Field label="Nome completo" error={errors.name} className="sm:col-span-2">
                   <input
@@ -416,7 +416,7 @@ export function Registration() {
                   ? "Processando..."
                   : `Pagar ${formatCurrency(selectedTicket.price)}`}
               </button>
-              <p className="mt-4 flex items-center justify-center gap-2 text-xs text-muted">
+              <p className="mt-4 flex items-start justify-center gap-2 text-center text-xs leading-relaxed text-muted">
                 <ShieldCheck size={14} />
                 Pagamento processado com segurança pela API do Asaas. Dados de cartão não são armazenados.
               </p>
@@ -429,7 +429,7 @@ export function Registration() {
 }
 
 const inputClass =
-  "w-full rounded-2xl border border-gold/20 bg-white px-4 py-3 text-sm text-earth outline-none transition focus:border-velvet";
+  "w-full rounded-2xl border border-gold/20 bg-white px-4 py-3 text-base text-earth outline-none transition focus:border-velvet sm:text-sm";
 
 function methodClass(active: boolean) {
   return `inline-flex items-center justify-center gap-2 rounded-2xl border px-4 py-3 text-sm transition ${

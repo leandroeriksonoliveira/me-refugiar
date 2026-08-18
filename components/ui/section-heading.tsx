@@ -12,7 +12,7 @@ export function SectionHeading({
   return (
     <div className="mx-auto max-w-2xl text-center">
       <p
-        className={`text-xs font-medium tracking-[0.28em] uppercase ${
+        className={`text-[11px] font-medium tracking-[0.18em] uppercase sm:text-xs sm:tracking-[0.28em] ${
           light ? "text-gold-soft" : "text-gold"
         }`}
       >
@@ -20,7 +20,7 @@ export function SectionHeading({
       </p>
       <div className="ornament my-4 text-gold">✦</div>
       <h2
-        className={`font-serif text-4xl leading-tight sm:text-5xl ${
+        className={`font-serif text-3xl leading-tight sm:text-4xl md:text-5xl ${
           light ? "text-cream" : "text-earth"
         }`}
       >

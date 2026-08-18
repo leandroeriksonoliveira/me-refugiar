@@ -5,7 +5,7 @@ import { schedule } from "@/lib/event";
 
 export function Schedule() {
   return (
-    <section id="programacao" className="bg-sand/60 py-24 sm:py-32">
+    <section id="programacao" className="bg-sand/60 py-16 sm:py-24 md:py-32">
       <Container>
         <FadeIn>
           <SectionHeading
@@ -18,7 +18,7 @@ export function Schedule() {
         <div className="mt-16 grid gap-6 lg:grid-cols-3">
           {schedule.map((block, index) => (
             <FadeIn key={block.day} delay={index * 0.08}>
-              <article className="h-full rounded-[2rem] border border-gold/15 bg-cream p-8">
+              <article className="h-full rounded-[1.5rem] border border-gold/15 bg-cream p-5 sm:rounded-[2rem] sm:p-8">
                 <p className="text-xs tracking-[0.22em] text-gold uppercase">{block.date}</p>
                 <h3 className="mt-2 font-serif text-3xl text-earth">{block.day}</h3>
                 <ul className="mt-8 space-y-6">

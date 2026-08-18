@@ -13,18 +13,18 @@ export function Hero() {
         alt="Ambiente acolhedor e luminoso do Congresso Me Refugiar"
         fill
         priority
-        className="hero-image object-cover"
+        className="hero-image object-cover object-[center_30%] sm:object-center"
         sizes="100vw"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-earth/70 via-burgundy/55 to-earth/85" />
       <div className="grain absolute inset-0" />
 
-      <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-20 pt-32 sm:px-8 sm:pb-28">
+      <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-4 pb-[calc(5.5rem+env(safe-area-inset-bottom))] pt-28 sm:px-8 sm:pb-28 sm:pt-32">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-xs tracking-[0.35em] text-gold-soft uppercase"
+          className="max-w-full text-[10px] leading-relaxed tracking-[0.18em] text-gold-soft uppercase sm:text-xs sm:tracking-[0.35em]"
         >
           {siteConfig.tagline} · {siteConfig.edition.title}
         </motion.p>
@@ -32,7 +32,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="mt-5 max-w-lg"
+          className="mt-4 max-w-lg sm:mt-5"
         >
           <Image
             src="/brand/logo-full-light.png"
@@ -40,14 +40,14 @@ export function Hero() {
             width={900}
             height={587}
             priority
-            className="h-auto w-[min(100%,22rem)] sm:w-[26rem]"
+            className="h-auto w-[min(100%,18rem)] sm:w-[26rem]"
           />
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-6 max-w-xl text-lg leading-relaxed text-cream/85 sm:text-xl"
+          className="mt-5 max-w-xl text-base leading-relaxed text-cream/85 sm:mt-6 sm:text-xl"
         >
           Venha descansar. Encontre refúgio. Renove a sua identidade em Deus —
           um congresso para mulheres que desejam voltar ao coração do Pai.
@@ -65,17 +65,17 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45 }}
-          className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center"
+          className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center sm:gap-4"
         >
           <a
             href="#inscricao"
-            className="inline-flex items-center justify-center rounded-full bg-velvet px-8 py-3.5 text-sm font-semibold tracking-wide text-cream uppercase transition hover:bg-earth"
+            className="inline-flex w-full items-center justify-center rounded-full bg-velvet px-8 py-3.5 text-sm font-semibold tracking-wide text-cream uppercase transition hover:bg-earth sm:w-auto"
           >
             Garantir Minha Vaga
           </a>
           <a
             href="#sobre"
-            className="inline-flex items-center justify-center rounded-full border border-cream/30 px-8 py-3.5 text-sm text-cream transition hover:border-gold-soft hover:text-gold-soft"
+            className="inline-flex w-full items-center justify-center rounded-full border border-cream/30 px-8 py-3.5 text-sm text-cream transition hover:border-gold-soft hover:text-gold-soft sm:w-auto"
           >
             Conhecer o congresso
           </a>

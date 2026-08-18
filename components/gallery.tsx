@@ -36,7 +36,7 @@ export function Gallery() {
   }, [active, video]);
 
   return (
-    <section id="galeria" className="bg-cream py-24 sm:py-32">
+    <section id="galeria" className="bg-cream py-16 sm:py-24 md:py-32">
       <Container>
         <FadeIn>
           <SectionHeading
@@ -91,8 +91,8 @@ export function Gallery() {
                     </span>
                   </span>
                 </div>
-                <div className="p-6">
-                  <h3 className="font-serif text-2xl text-earth">{item.title}</h3>
+                <div className="p-4 sm:p-6">
+                  <h3 className="font-serif text-xl text-earth sm:text-2xl">{item.title}</h3>
                   <p className="mt-2 text-sm text-muted">{item.description}</p>
                 </div>
               </button>
@@ -104,7 +104,7 @@ export function Gallery() {
       <AnimatePresence>
         {current && active !== null ? (
           <motion.div
-            className="fixed inset-0 z-[80] flex items-center justify-center bg-earth/85 p-4 backdrop-blur-sm"
+            className="fixed inset-0 z-[80] flex items-center justify-center bg-earth/85 p-3 backdrop-blur-sm sm:p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -112,15 +112,15 @@ export function Gallery() {
           >
             <button
               type="button"
-              className="absolute top-5 right-5 text-cream"
+              className="absolute top-[max(1rem,env(safe-area-inset-top))] right-4 z-10 grid h-10 w-10 place-items-center rounded-full bg-earth/60 text-cream"
               aria-label="Fechar"
               onClick={() => setActive(null)}
             >
-              <X />
+              <X size={20} />
             </button>
             <button
               type="button"
-              className="absolute left-4 text-cream"
+              className="absolute bottom-6 left-3 z-10 grid h-11 w-11 place-items-center rounded-full bg-earth/70 text-cream sm:top-1/2 sm:bottom-auto sm:left-4 sm:-translate-y-1/2"
               aria-label="Anterior"
               onClick={(event) => {
                 event.stopPropagation();
@@ -129,14 +129,14 @@ export function Gallery() {
                 );
               }}
             >
-              <ChevronLeft size={36} />
+              <ChevronLeft size={28} />
             </button>
             <motion.div
               key={current.src}
               initial={{ scale: 0.96, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.96, opacity: 0 }}
-              className="relative max-h-[85vh] w-full max-w-4xl"
+              className="relative max-h-[80vh] w-full max-w-4xl px-0 sm:px-14"
               onClick={(event) => event.stopPropagation()}
             >
               <Image
@@ -144,13 +144,13 @@ export function Gallery() {
                 alt={current.alt}
                 width={1600}
                 height={1200}
-                className="max-h-[85vh] w-full rounded-2xl object-contain"
+                className="max-h-[72vh] w-full rounded-2xl object-contain sm:max-h-[85vh]"
               />
-              <p className="mt-3 text-center font-serif text-lg text-cream">{current.caption}</p>
+              <p className="mt-3 text-center font-serif text-base text-cream sm:text-lg">{current.caption}</p>
             </motion.div>
             <button
               type="button"
-              className="absolute right-4 text-cream"
+              className="absolute right-3 bottom-6 z-10 grid h-11 w-11 place-items-center rounded-full bg-earth/70 text-cream sm:top-1/2 sm:right-4 sm:bottom-auto sm:-translate-y-1/2"
               aria-label="Próxima"
               onClick={(event) => {
                 event.stopPropagation();
@@ -159,7 +159,7 @@ export function Gallery() {
                 );
               }}
             >
-              <ChevronRight size={36} />
+              <ChevronRight size={28} />
             </button>
           </motion.div>
         ) : null}
@@ -168,14 +168,19 @@ export function Gallery() {
       <AnimatePresence>
         {video ? (
           <motion.div
-            className="fixed inset-0 z-[80] flex items-center justify-center bg-earth/85 p-4"
+            className="fixed inset-0 z-[80] flex items-center justify-center bg-earth/85 p-3 sm:p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setVideo(null)}
           >
-            <button type="button" className="absolute top-5 right-5 text-cream" aria-label="Fechar">
-              <X />
+            <button
+              type="button"
+              className="absolute top-[max(1rem,env(safe-area-inset-top))] right-4 grid h-10 w-10 place-items-center rounded-full bg-earth/60 text-cream"
+              aria-label="Fechar"
+              onClick={() => setVideo(null)}
+            >
+              <X size={20} />
             </button>
             <div
               className="aspect-video w-full max-w-4xl overflow-hidden rounded-2xl bg-black"

@@ -12,13 +12,13 @@ export function Logo({ className = "", light = false, variant = "nav" }: LogoPro
 
   if (variant === "full") {
     return (
-      <Link href="/" className={`inline-block ${className}`}>
+      <Link href="/" className={`inline-block max-w-full ${className}`}>
         <Image
           src={light ? "/brand/logo-full-light.png" : "/brand/logo-full.png"}
           alt={alt}
           width={900}
           height={587}
-          className="h-auto w-[180px] sm:w-[220px]"
+          className="h-auto w-[150px] max-w-full sm:w-[200px] md:w-[220px]"
           priority
         />
       </Link>
@@ -33,20 +33,20 @@ export function Logo({ className = "", light = false, variant = "nav" }: LogoPro
           alt={alt}
           width={480}
           height={664}
-          className="h-12 w-auto"
+          className="h-10 w-auto sm:h-12"
         />
       </Link>
     );
   }
 
   return (
-    <Link href="/" className={`inline-flex items-center gap-2.5 ${className}`}>
+    <Link href="/" className={`inline-flex min-w-0 max-w-[calc(100%-3.5rem)] items-center gap-2 sm:gap-2.5 ${className}`}>
       <Image
         src={light ? "/brand/logo-mark-light.png" : "/brand/logo-mark.png"}
         alt=""
         width={480}
         height={664}
-        className="h-11 w-auto sm:h-12"
+        className="h-9 w-auto shrink-0 sm:h-11 md:h-12"
         priority
       />
       <Image
@@ -54,7 +54,7 @@ export function Logo({ className = "", light = false, variant = "nav" }: LogoPro
         alt={alt}
         width={800}
         height={211}
-        className="h-8 w-auto sm:h-9"
+        className="h-6 w-auto max-w-[58vw] object-contain object-left sm:h-8 sm:max-w-none md:h-9"
         priority
       />
     </Link>

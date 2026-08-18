@@ -25,7 +25,7 @@ const pillars = [
 
 export function About() {
   return (
-    <section id="sobre" className="relative bg-cream py-24 sm:py-32">
+    <section id="sobre" className="relative bg-cream py-16 sm:py-24 md:py-32">
       <Container>
         <FadeIn>
           <SectionHeading
@@ -38,7 +38,7 @@ export function About() {
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {pillars.map((pillar, index) => (
             <FadeIn key={pillar.title} delay={index * 0.08}>
-              <article className="h-full rounded-3xl border border-gold/15 bg-white/60 p-8 shadow-[0_20px_50px_-32px_rgba(92,42,53,0.45)]">
+              <article className="h-full rounded-3xl border border-gold/15 bg-white/60 p-5 shadow-[0_20px_50px_-32px_rgba(92,42,53,0.45)] sm:p-8">
                 <pillar.icon className="text-velvet" size={26} />
                 <h3 className="mt-5 font-serif text-2xl text-earth">{pillar.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">{pillar.text}</p>
@@ -49,7 +49,7 @@ export function About() {
 
         <div className="mt-20 grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <FadeIn>
-            <div className="relative aspect-square overflow-hidden rounded-[2rem]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] sm:aspect-square sm:rounded-[2rem]">
               <Image
                 src="/images/renata-vitorino-coelho.png"
                 alt={`${siteConfig.speaker}, idealizadora do Congresso Me Refugiar`}
@@ -59,7 +59,7 @@ export function About() {
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-earth/70 via-transparent to-transparent" />
-              <p className="absolute bottom-6 left-6 font-serif text-2xl text-cream">
+              <p className="absolute right-5 bottom-5 left-5 font-serif text-xl text-cream sm:bottom-6 sm:left-6 sm:right-auto sm:text-2xl">
                 {siteConfig.speaker}
               </p>
             </div>
@@ -67,7 +67,7 @@ export function About() {
 
           <FadeIn delay={0.1}>
             <p className="text-xs tracking-[0.28em] text-gold uppercase">A idealizadora</p>
-            <h3 className="mt-3 font-serif text-4xl text-earth">{siteConfig.speaker}</h3>
+            <h3 className="mt-3 font-serif text-3xl text-earth sm:text-4xl">{siteConfig.speaker}</h3>
             <a
               href={siteConfig.social.instagram}
               target="_blank"
@@ -103,14 +103,14 @@ export function About() {
           </FadeIn>
         </div>
 
-        <div className="mt-20 grid grid-cols-2 gap-4 rounded-[2rem] bg-burgundy px-6 py-10 text-center sm:grid-cols-4 sm:px-10">
+        <div className="mt-16 grid grid-cols-2 gap-3 rounded-[1.5rem] bg-burgundy px-4 py-8 text-center sm:mt-20 sm:gap-4 sm:rounded-[2rem] sm:px-10 sm:py-10 md:grid-cols-4">
           {stats.map((stat) => (
             <div key={stat.label}>
               <p className="font-serif text-4xl text-gold-soft sm:text-5xl">
                 {stat.value}
                 {stat.suffix}
               </p>
-              <p className="mt-2 text-xs tracking-wide text-blush uppercase">{stat.label}</p>
+              <p className="mt-2 text-[10px] leading-snug tracking-wide text-blush uppercase sm:text-xs">{stat.label}</p>
             </div>
           ))}
         </div>

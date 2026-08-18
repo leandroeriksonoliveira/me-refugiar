@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Outfit } from "next/font/google";
 import { siteConfig } from "@/lib/event";
 import "./globals.css";
@@ -55,13 +55,21 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
+  themeColor: "#583949",
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
-      className={`${cormorant.variable} ${outfit.variable} h-full scroll-smooth antialiased`}
+      className={`${cormorant.variable} ${outfit.variable} h-full overflow-x-hidden scroll-smooth antialiased`}
     >
-      <body className="min-h-full bg-cream font-sans text-ink">{children}</body>
+      <body className="min-h-full overflow-x-hidden bg-cream font-sans text-ink">{children}</body>
     </html>
   );
 }
