@@ -34,27 +34,27 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.08 }}
-          className="mt-4 flex items-center gap-3 sm:gap-4 md:gap-5"
+          className="mt-4 pb-8 sm:pb-9"
         >
-          <Image
-            src="/brand/logo-mark-light.png"
-            alt=""
-            width={56}
-            height={78}
-            className="h-10 w-auto max-h-10 shrink-0 object-contain sm:h-12 sm:max-h-12 md:h-14 md:max-h-14"
-            priority
-          />
-          <div className="min-w-0 pb-7 sm:pb-8">
-            <h1 className="font-serif text-[2.5rem] leading-[0.95] whitespace-nowrap text-cream sm:text-6xl md:text-7xl">
-              <span className="relative inline-block">
+          <h1 className="flex items-center gap-3 font-serif text-[2.5rem] leading-none text-cream sm:gap-4 sm:text-6xl md:text-7xl">
+            <Image
+              src="/brand/logo-mark-light.png"
+              alt=""
+              width={72}
+              height={100}
+              className="h-[0.78em] w-auto shrink-0 object-contain"
+              priority
+            />
+            <span className="whitespace-nowrap">
+              <span className="relative">
                 Me Refu
-                <span className="absolute top-full left-0 right-0 mt-2 text-right text-[11px] tracking-[0.28em] text-gold-soft uppercase sm:text-xs sm:tracking-[0.32em]">
+                <span className="absolute top-full right-0 mt-2 font-sans text-[0.26em] font-normal tracking-[0.32em] text-gold-soft uppercase">
                   Mulheres
                 </span>
               </span>
               giar
-            </h1>
-          </div>
+            </span>
+          </h1>
         </motion.div>
 
         <motion.p
