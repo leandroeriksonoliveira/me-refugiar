@@ -189,7 +189,7 @@ export const brandedProducts = [
     description:
       "A bag do ministério: tecido no vinho profundo, logo em creme e o motivo botânico em toda a peça.",
     src: "/images/produtos/bag.jpg",
-    alt: "Bag personalizada Me Refugiar Ministério de Mulheres",
+    alt: "Bag personalizada Me Refugiar Mulheres",
   },
 ] as const;
 

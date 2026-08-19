@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <main className="grid min-h-screen place-items-center bg-cream px-6 text-center">
       <div>
-        <Logo variant="full" />
+        <Logo variant="full" className="items-center" />
         <h1 className="mt-10 font-serif text-3xl text-earth sm:text-5xl">Página não encontrada</h1>
         <p className="mt-4 text-muted">Este caminho não existe neste refúgio.</p>
         <Link

@@ -10,7 +10,6 @@ const links = [
   { href: "#galeria", label: "Galeria" },
   { href: "#produtos", label: "Produtos" },
   { href: "#programacao", label: "Programação" },
-  { href: "#inscricao", label: "Inscrição" },
   { href: "#contato", label: "Contato" },
 ];
 
@@ -32,24 +31,28 @@ export function Header() {
     };
   }, [open]);
 
+  const overHero = !scrolled && !open;
+
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top)] transition-all duration-300 ${
-        scrolled || open
-          ? "border-b border-gold/15 bg-cream/95 shadow-sm backdrop-blur-md"
-          : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top)] transition-colors duration-300 ${
+        overHero
+          ? "border-b border-cream/10 bg-earth/55 backdrop-blur-md"
+          : "border-b border-gold/15 bg-cream/95 shadow-sm backdrop-blur-md"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:h-[4.25rem] sm:px-8">
-        <Logo light={!scrolled && !open} variant="nav" />
+      <div className="mx-auto flex h-16 max-w-7xl items-center gap-6 px-5 sm:px-8">
+        <Logo light={overHero} variant="nav" />
 
-        <nav className="hidden min-w-0 items-center gap-3 xl:gap-6 lg:flex">
+        <nav className="ml-auto hidden items-center gap-1 lg:flex">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={`shrink-0 text-[13px] tracking-wide whitespace-nowrap transition hover:text-gold xl:text-sm ${
-                scrolled ? "text-earth" : "text-cream/90"
+              className={`rounded-full px-3 py-2 text-[13px] tracking-wide whitespace-nowrap transition xl:px-3.5 ${
+                overHero
+                  ? "text-cream/90 hover:bg-cream/10 hover:text-cream"
+                  : "text-earth/80 hover:bg-sand/60 hover:text-earth"
               }`}
             >
               {link.label}
@@ -57,16 +60,16 @@ export function Header() {
           ))}
           <a
             href="#inscricao"
-            className="shrink-0 rounded-full bg-velvet px-4 py-2 text-[13px] font-medium text-cream shadow-md transition hover:bg-burgundy xl:px-5 xl:py-2.5 xl:text-sm"
+            className="ml-2 rounded-full bg-velvet px-5 py-2 text-[13px] font-medium text-cream shadow-sm transition hover:bg-burgundy"
           >
-            Garantir Minha Vaga
+            Garantir vaga
           </a>
         </nav>
 
         <button
           type="button"
-          className={`grid h-11 w-11 shrink-0 place-items-center rounded-full border lg:hidden ${
-            scrolled || open ? "border-gold/30 text-earth" : "border-cream/30 text-cream"
+          className={`ml-auto grid h-10 w-10 shrink-0 place-items-center rounded-full border lg:hidden ${
+            overHero ? "border-cream/30 text-cream" : "border-gold/30 text-earth"
           }`}
           aria-label={open ? "Fechar menu" : "Abrir menu"}
           aria-expanded={open}
@@ -77,7 +80,7 @@ export function Header() {
       </div>
 
       {open ? (
-        <div className="max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-gold/10 bg-cream px-5 py-6 lg:hidden">
+        <div className="max-h-[calc(100dvh-4.5rem)] overflow-y-auto bg-cream px-5 py-6 lg:hidden">
           <nav className="flex flex-col gap-1">
             {links.map((link) => (
               <a
@@ -94,7 +97,7 @@ export function Header() {
               onClick={() => setOpen(false)}
               className="mt-3 rounded-full bg-velvet px-5 py-3.5 text-center text-sm font-medium text-cream"
             >
-              Garantir Minha Vaga
+              Garantir vaga
             </a>
           </nav>
         </div>

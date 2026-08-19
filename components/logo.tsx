@@ -8,32 +8,47 @@ type LogoProps = {
 };
 
 export function Logo({ className = "", light = false, variant = "nav" }: LogoProps) {
-  const alt = "Me Refugiar — Ministério de Mulheres";
+  const alt = "Me Refugiar — Mulheres";
 
   if (variant === "full") {
     return (
-      <Link href="/" className={`inline-block max-w-full ${className}`}>
+      <Link href="/" className={`inline-flex flex-col items-start ${className}`}>
         <Image
-          src={light ? "/brand/logo-full-light.png" : "/brand/logo-full.png"}
-          alt={alt}
-          width={900}
-          height={587}
-          className="h-auto w-[150px] max-w-full sm:w-[200px] md:w-[220px]"
+          src={light ? "/brand/logo-mark-light.png" : "/brand/logo-mark.png"}
+          alt=""
+          width={72}
+          height={100}
+          className="h-16 w-auto max-h-16 object-contain sm:h-[4.5rem] sm:max-h-[4.5rem]"
           priority
         />
+        <span
+          className={`mt-3 font-serif text-3xl leading-none ${
+            light ? "text-cream" : "text-earth"
+          }`}
+        >
+          Me Refugiar
+        </span>
+        <span
+          className={`mt-2 text-[11px] tracking-[0.28em] uppercase ${
+            light ? "text-blush/90" : "text-muted"
+          }`}
+        >
+          Mulheres
+        </span>
+        <span className="sr-only">{alt}</span>
       </Link>
     );
   }
 
   if (variant === "mark") {
     return (
-      <Link href="/" className={`inline-block ${className}`}>
+      <Link href="/" className={`inline-flex items-center ${className}`}>
         <Image
           src={light ? "/brand/logo-mark-light.png" : "/brand/logo-mark.png"}
           alt={alt}
-          width={480}
-          height={664}
-          className="h-11 w-auto sm:h-12 md:h-14"
+          width={36}
+          height={50}
+          className="h-9 w-auto max-h-9 object-contain"
         />
       </Link>
     );
@@ -42,24 +57,23 @@ export function Logo({ className = "", light = false, variant = "nav" }: LogoPro
   return (
     <Link
       href="/"
-      className={`inline-flex min-w-0 max-w-[calc(100%-3.5rem)] shrink-0 items-center gap-2 lg:max-w-none sm:gap-2.5 ${className}`}
+      className={`inline-flex items-center gap-2.5 ${className}`}
     >
       <Image
         src={light ? "/brand/logo-mark-light.png" : "/brand/logo-mark.png"}
         alt=""
-        width={480}
-        height={664}
-        className="h-8 w-auto shrink-0 sm:h-9"
+        width={32}
+        height={44}
+        className="h-8 w-auto max-h-8 object-contain"
         priority
       />
-      <Image
-        src={light ? "/brand/logo-wordmark-light.png" : "/brand/logo-wordmark.png"}
-        alt={alt}
-        width={800}
-        height={211}
-        className="h-5 w-auto object-contain object-left sm:h-6 md:h-7"
-        priority
-      />
+      <span
+        className={`font-serif text-[1.35rem] leading-none tracking-tight ${
+          light ? "text-cream" : "text-earth"
+        }`}
+      >
+        Me Refugiar
+      </span>
     </Link>
   );
 }
