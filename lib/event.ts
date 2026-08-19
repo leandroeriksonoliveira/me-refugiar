@@ -13,9 +13,11 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://merefugiar.com.br",
   locale: "pt_BR",
   whatsappNumber:
-    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5511999999999",
+    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5531992898159",
   whatsappMessage:
     "Olá! Gostaria de saber mais sobre o Congresso Me Refugiar.",
+  whatsappGroupUrl:
+    "https://chat.whatsapp.com/FURcmkmd5vb0zPCeYkSh8z?s=sh&p=a&ilr=1",
   social: {
     instagram: "https://www.instagram.com/renatavco/",
     youtube: "https://youtube.com/@merefugiar",
@@ -245,7 +247,12 @@ export const faqs = [
   {
     question: "Quando recebo as informações do congresso?",
     answer:
-      "Você receberá todas as informações necessárias em até 15 dias antes do congresso. Assim que fizer a inscrição, será encaminhada a um grupo de WhatsApp.",
+      "Você receberá todas as informações necessárias em até 15 dias antes do congresso. Assim que fizer a inscrição, entre no grupo de WhatsApp das participantes para acompanhar os avisos.",
+  },
+  {
+    question: "Como entro no grupo do WhatsApp?",
+    answer:
+      "O grupo é das inscritas no congresso, não o WhatsApp de dúvidas. O convite está na seção de inscrição e também no rodapé do site, em “Entrar no grupo”.",
   },
   {
     question: "Posso enviar um pedido de oração?",

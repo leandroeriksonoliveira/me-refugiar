@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/ui/fade-in";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { brazilStates, tickets } from "@/lib/event";
+import { WhatsAppGroupLink } from "@/components/whatsapp-group-link";
 import {
   formatCardNumber,
   formatCep,
@@ -156,8 +157,16 @@ export function Registration() {
             light
             eyebrow="Inscrição"
             title="Garanta o seu lugar neste refúgio"
-            description="As inscrições para 2027 já estão abertas. Você pode pagar via PIX ou parcelado no cartão. Assim que fizer a inscrição, você será encaminhada a um grupo de WhatsApp. Fique atenta: todas as informações necessárias chegam em até 15 dias antes do congresso."
+            description="As inscrições para 2027 já estão abertas. Você pode pagar via PIX ou parcelado no cartão. Depois da inscrição, entre no grupo das participantes. Fique atenta: todas as informações necessárias chegam em até 15 dias antes do congresso."
           />
+        </FadeIn>
+
+        <FadeIn className="mx-auto mt-8 max-w-xl rounded-[1.25rem] border border-cream/15 bg-white/5 px-5 py-5 text-center sm:mt-10 sm:px-8">
+          <p className="text-sm leading-relaxed text-blush/90">
+            Já se inscreveu? Este é o grupo das participantes — não o WhatsApp de
+            dúvidas.
+          </p>
+          <WhatsAppGroupLink className="mt-4" />
         </FadeIn>
 
         {result ? (
@@ -172,9 +181,10 @@ export function Registration() {
                   Sua vaga no {result.ticketName} está garantida. Enviamos os detalhes para {form.email}.
                 </p>
                 <p className="mt-4 text-sm leading-relaxed text-muted">
-                  Você será encaminhada a um grupo de WhatsApp. Fique atenta: todas
-                  as informações necessárias chegam em até 15 dias antes do congresso.
+                  Entre agora no grupo das participantes. As informações do congresso
+                  chegam em até 15 dias antes do evento.
                 </p>
+                <WhatsAppGroupLink className="mt-6" />
               </div>
             ) : result.billingType === "PIX" && result.pix ? (
               <div>
