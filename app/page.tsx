@@ -5,8 +5,10 @@ import { Gallery } from "@/components/gallery";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { JsonLd } from "@/components/json-ld";
+import { Products } from "@/components/products";
 import { Registration } from "@/components/registration";
 import { Schedule } from "@/components/schedule";
+import { Story } from "@/components/story";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 
 export default function Home() {
@@ -17,7 +19,9 @@ export default function Home() {
       <main>
         <Hero />
         <About />
+        <Story />
         <Gallery />
+        <Products />
         <Schedule />
         <Registration />
         <FAQ />

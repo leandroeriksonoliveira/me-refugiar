@@ -26,10 +26,10 @@ export default function TwitterImage() {
           Me Refugiar
         </div>
         <div style={{ fontSize: 28, marginTop: 24, color: "#dbb0a0", maxWidth: 780 }}>
-          Venha descansar. Encontre refúgio. Renove a sua identidade em Deus.
+          Mais Profundo Nele · 4, 5 e 6 de junho de 2027
         </div>
         <div style={{ marginTop: 40, fontSize: 22, color: "#e9b586" }}>
-          Com Renata Vitorino Coelho · 12–14 SET 2026
+          Com Renata Vitorino Coelho · 12 ministrações
         </div>
       </div>
     ),

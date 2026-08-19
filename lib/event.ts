@@ -2,8 +2,14 @@ export const siteConfig = {
   name: "Me Refugiar",
   tagline: "Congresso para Mulheres",
   speaker: "Renata Vitorino Coelho",
+  congressLine:
+    "Um congresso para mulheres encontrarem refúgio em Deus, restaurarem a identidade e renovarem a esperança.",
   description:
     "Um congresso para mulheres encontrarem refúgio em Deus, restaurarem a identidade e renovarem a esperança. Idealizado e ministrado por Renata Vitorino Coelho.",
+  verse: {
+    text: "Andarei em liberdade, pois tenho buscado os teus preceitos.",
+    ref: "Salmos 119:45",
+  },
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://merefugiar.com.br",
   locale: "pt_BR",
   whatsappNumber:
@@ -16,186 +22,215 @@ export const siteConfig = {
     facebook: "https://facebook.com/merefugiar",
   },
   venue: {
-    name: "Espaço Refúgio",
-    address: "Rua das Oliveiras, 120",
-    neighborhood: "Jardim das Graças",
-    city: "São Paulo",
-    state: "SP",
-    zip: "01452-000",
-    mapsUrl: "https://maps.google.com/?q=São+Paulo+SP",
+    name: "Sítio Recanto do Quero-quero",
+    address: "Serra Azul",
+    city: "Mateus Leme",
+    state: "MG",
+    note: "De fácil acesso, próximo ao centro de Mateus Leme e a 60 km de Belo Horizonte.",
+    mapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=S%C3%ADtio+Recanto+do+Quero-quero+Serra+Azul+Mateus+Leme+MG",
   },
   edition: {
-    title: "Edição 2026",
-    dates: "12, 13 e 14 de setembro de 2026",
-    shortDates: "12–14 SET 2026",
-    theme: "Encontre o teu refúgio",
+    title: "Edição 2027",
+    dates: "4, 5 e 6 de junho de 2027",
+    shortDates: "4–6 JUN 2027",
+    theme: "Mais Profundo Nele",
+    startYmd: "2027-06-04",
+    endYmd: "2027-06-06",
+    sessions: 12,
   },
 } as const;
+
+const ticketBenefits = [
+  "Hospedagem no sítio",
+  "4 refeições diárias",
+  "12 ministrações",
+  "Grupo de WhatsApp após a inscrição",
+] as const;
 
 export const tickets = [
   {
     id: "lote-antecipado",
-    name: "Lote Antecipado",
-    description: "Inscrição com valor especial enquanto houver vagas.",
-    price: 197,
+    name: "Lote antecipado",
+    description: "Valor especial. Esgota primeiro — garanta sua vaga com antecedência.",
+    price: 350,
     badge: "Vagas limitadas",
-    featured: false,
-    benefits: [
-      "Acesso a todos os encontros",
-      "Material de apoio digital",
-      "Certificado de participação",
-    ],
+    featured: true,
+    benefits: ticketBenefits,
   },
   {
     id: "lote-regular",
-    name: "Lote Regular",
-    description: "A experiência completa do congresso.",
-    price: 247,
-    badge: "Mais escolhido",
-    featured: true,
-    benefits: [
-      "Acesso a todos os encontros",
-      "Material impresso + digital",
-      "Coffee break nos três dias",
-      "Certificado de participação",
-    ],
+    name: "Lote regular",
+    description: "A experiência completa do congresso no sítio.",
+    price: 380,
+    badge: "Aberto",
+    featured: false,
+    benefits: ticketBenefits,
   },
   {
-    id: "lote-vip",
-    name: "Lote VIP",
-    description: "Cuidado especial do primeiro ao último encontro.",
-    price: 397,
-    badge: "Experiência premium",
+    id: "lote-ultimo",
+    name: "Último lote",
+    description: "Últimas vagas para viver dias intensos na Presença do Pai.",
+    price: 400,
+    badge: "Últimas vagas",
     featured: false,
-    benefits: [
-      "Assentos reservados na frente",
-      "Kit exclusivo Me Refugiar",
-      "Coffee break + almoço no sábado",
-      "Encontro de oração com a equipe",
-    ],
+    benefits: ticketBenefits,
   },
 ] as const;
 
 export type TicketId = (typeof tickets)[number]["id"];
 
 export const stats = [
-  { value: "8", label: "Edições realizadas", suffix: "" },
-  { value: "2400", label: "Vidas impactadas", suffix: "+" },
-  { value: "12", label: "Estados representados", suffix: "" },
-  { value: "10", label: "Anos de ministério", suffix: "" },
+  { value: "5", label: "Edições realizadas", suffix: "" },
+  { value: "100", label: "Vidas impactadas", suffix: "+" },
+  { value: "3", label: "Estados representados", suffix: "" },
+  { value: "5", label: "Anos de ministério", suffix: "" },
 ] as const;
 
-export const schedule = [
-  {
-    day: "Sexta-feira",
-    date: "12 de setembro",
-    items: [
-      { time: "18h30", title: "Recepção e acomodação", description: "Acolhida, credenciamento e um tempo para respirar." },
-      { time: "19h30", title: "Abertura oficial", description: "Louvor, comunhão e a primeira palavra da edição." },
-      { time: "21h30", title: "Ministério de oração", description: "Um espaço íntimo para entregar o que pesa o coração." },
-    ],
-  },
-  {
-    day: "Sábado",
-    date: "13 de setembro",
-    items: [
-      { time: "09h00", title: "Encontro da manhã", description: "Adoração e ensino sobre identidade e refúgio." },
-      { time: "11h00", title: "Rodas de partilha", description: "Conversas guiadas em grupos pequenos e acolhedores." },
-      { time: "14h30", title: "Palavra com Renata Vitorino Coelho", description: "O coração do congresso: cura, descanso e propósito." },
-      { time: "19h00", title: "Noite de restauração", description: "Louvor estendido e ministério pessoal." },
-    ],
-  },
-  {
-    day: "Domingo",
-    date: "14 de setembro",
-    items: [
-      { time: "09h00", title: "Santa Ceia e encerramento", description: "Renovação da aliança e envio das mulheres." },
-      { time: "11h00", title: "Bênção final", description: "Um último abraço, um novo começo." },
-    ],
-  },
-] as const;
+export const schedule = {
+  note: "A programação será liberada na semana do evento. Se prepare para viver dias intensos, cheios da Presença do Pai.",
+  days: [
+    { day: "Sexta-feira", date: "4 de junho" },
+    { day: "Sábado", date: "5 de junho" },
+    { day: "Domingo", date: "6 de junho" },
+  ],
+} as const;
 
 export const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1600&q=80",
-    alt: "Mulheres reunidas em comunhão durante o congresso",
+    src: "/images/edicoes/comunhao.jpg",
+    alt: "Grupo de mulheres sorrindo juntas no Me Refugiar",
     caption: "Comunhão",
   },
   {
-    src: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1600&q=80",
-    alt: "Momento de oração e silêncio",
+    src: "/images/edicoes/oracao.jpg",
+    alt: "Mulheres em oração, uma ao lado da outra",
     caption: "Oração",
   },
   {
-    src: "https://images.unsplash.com/photo-1474418397713-7ede21d49118?auto=format&fit=crop&w=1600&q=80",
-    alt: "Luz dourada em um ambiente de retiro",
-    caption: "Presença",
+    src: "/images/edicoes/drive-11.jpg",
+    alt: "Abraço de restauração ao ar livre",
+    caption: "Abraço",
   },
   {
-    src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80",
-    alt: "Paisagem de descanso e natureza",
-    caption: "Descanso",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b4?auto=format&fit=crop&w=1600&q=80",
-    alt: "Adoração e mãos levantadas",
+    src: "/images/edicoes/drive-8.jpg",
+    alt: "Adoração com mãos levantadas no pavilhão",
     caption: "Adoração",
   },
   {
-    src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80",
-    alt: "Caminho entre árvores ao entardecer",
-    caption: "Caminho",
+    src: "/images/edicoes/drive-7.jpg",
+    alt: "Cuidado e serviço entre as mulheres",
+    caption: "Cuidado",
   },
   {
-    src: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1600&q=80",
-    alt: "Flores em tons quentes e suaves",
-    caption: "Beleza",
+    src: "/images/edicoes/acolhimento.jpg",
+    alt: "Mesa de acolhimento com a palavra de Deus",
+    caption: "Acolhimento",
   },
   {
-    src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
-    alt: "Horizonte dourado ao nascer do sol",
-    caption: "Esperança",
+    src: "/images/edicoes/drive-1.jpg",
+    alt: "Palavra e Bíblia no encontro",
+    caption: "Palavra",
+  },
+  {
+    src: "/images/edicoes/refugio.jpg",
+    alt: "Casa de retiro ao entardecer",
+    caption: "Refúgio",
+  },
+  {
+    src: "/images/edicoes/drive-10.jpg",
+    alt: "Encontro das mulheres na natureza",
+    caption: "Encontro",
+  },
+  {
+    src: "/images/edicoes/encontro.jpg",
+    alt: "Encontro simbólico de restauração e identidade",
+    caption: "Identidade",
+  },
+  {
+    src: "/images/edicoes/drive-13.jpg",
+    alt: "Semente e palavras de identidade em Deus",
+    caption: "Recomeçar",
+  },
+  {
+    src: "/images/edicoes/celebracao.jpg",
+    alt: "Celebração com balões no pavilhão",
+    caption: "Celebração",
   },
 ] as const;
 
 export const videos = [
   {
-    id: "aqz-KE-bpKQ",
-    title: "Melhores momentos — Edição anterior",
-    description: "Um recorte da adoração, das palavras e dos abraços que marcaram o último congresso.",
-  },
-  {
-    id: "eRsGyueVLvQ",
-    title: "Testemunhos de restauração",
-    description: "Mulheres compartilham o que Deus fez depois de se refugiarem nEle.",
+    id: "edicao-anterior",
+    src: "/videos/edicao-anterior.mp4",
+    title: "Edições anteriores",
+    description:
+      "Um recorte dos encontros: palavra, comunhão e o que Deus já fez no Me Refugiar.",
   },
 ] as const;
+
+export const brandedProducts = [
+  {
+    name: "Crachá",
+    description:
+      "Identidade no peito: palestrante e encontrista, com a oliveira e a libélula em vinho e blush.",
+    src: "/images/produtos/cracha.jpg",
+    alt: "Crachás personalizados Me Refugiar — palestrante e encontrista",
+  },
+  {
+    name: "Garrafa",
+    description:
+      "Leve o refúgio no dia a dia. Três cores da paleta — terracota, vinho e areia — com a marca completa.",
+    src: "/images/produtos/garrafa.jpg",
+    alt: "Garrafas personalizadas Me Refugiar em vinho, areia e blush",
+  },
+  {
+    name: "Bag",
+    description:
+      "A bag do ministério: tecido no vinho profundo, logo em creme e o motivo botânico em toda a peça.",
+    src: "/images/produtos/bag.jpg",
+    alt: "Bag personalizada Me Refugiar Ministério de Mulheres",
+  },
+] as const;
+
+export const luare = {
+  name: "LUARE Semi Joias",
+  slogan: "Estilo que reflete sua essência",
+  coupon: "REFUGIAR7%OFF",
+  url: "https://luaresemijoias.com.br",
+  flyer: "/images/parcerias/luare-cupom.jpg",
+  description:
+    "Parceria para quem deseja levar um pedaço do encontro no corpo: semi joias com 7% off no site, com o cupom exclusivo do Me Refugiar.",
+} as const;
 
 export const faqs = [
   {
     question: "Até quando posso me inscrever?",
     answer:
-      "As inscrições permanecem abertas até o preenchimento das vagas ou até o dia 5 de setembro de 2026. O lote antecipado se esgota primeiro. Recomendamos garantir sua vaga com antecedência.",
+      "As inscrições permanecem abertas até o preenchimento das vagas ou até o dia 20 de maio de 2027. O lote antecipado se esgota primeiro. Recomendamos garantir sua vaga com antecedência.",
   },
   {
     question: "O que devo levar?",
     answer:
-      "Traga Bíblia, caderno, caneta, uma peça de roupa confortável e o coração disposto. Se estiver no Lote VIP, o kit e as refeições já estão inclusos. Água e coffee break estarão disponíveis para todas.",
+      "Traga Bíblia, roupas confortáveis, itens de higiene pessoal, roupa de cama e banho, protetor solar, repelente e um coração disposto. Lembre-se: você estará em um sítio.",
   },
   {
     question: "Onde acontece o congresso?",
     answer:
-      "No Espaço Refúgio, em São Paulo — SP. O endereço completo e o mapa ficam no rodapé do site. Enviaremos também um e-mail com indicações de estacionamento e hospedagem próximas.",
+      "No Sítio Recanto do Quero-quero, Serra Azul, Mateus Leme — MG. De fácil acesso, próximo ao centro de Mateus Leme e a 60 km de Belo Horizonte.",
   },
   {
     question: "Há hospedagem no local?",
-    answer:
-      "O congresso não inclui pernoite. Indicamos hotéis e pousadas parceiras a poucos minutos do espaço. Escreva no WhatsApp se quiser a lista atualizada.",
+    answer: "Sim.",
+  },
+  {
+    question: "As refeições estão inclusas?",
+    answer: "Sim, 4 refeições diárias.",
   },
   {
     question: "Qual é a política de cancelamento?",
     answer:
-      "Cancelamentos com até 15 dias de antecedência têm reembolso de 80% do valor pago. Entre 14 e 7 dias, o crédito pode ser transferido para outra participante. Após esse prazo, não há reembolso, mas a vaga pode ser cedida mediante aviso.",
+      "Cancelamentos com até 30 dias de antecedência têm reembolso de 50% do valor pago. Entre 14 e 7 dias, o crédito pode ser transferido para outra participante. Após esse prazo, não há reembolso, mas a vaga pode ser cedida mediante aviso.",
   },
   {
     question: "O evento é apenas para mulheres?",
@@ -205,7 +240,12 @@ export const faqs = [
   {
     question: "Como funciona o pagamento?",
     answer:
-      "Você pode pagar via PIX (QR Code dinâmico ou copia e cola) ou cartão de crédito, inclusive parcelado. A confirmação do PIX é automática assim que o banco liquida a cobrança.",
+      "Você pode pagar via PIX (QR Code dinâmico ou copia e cola). A confirmação do PIX é automática assim que o banco liquida a cobrança. E também parcelado no cartão.",
+  },
+  {
+    question: "Quando recebo as informações do congresso?",
+    answer:
+      "Você receberá todas as informações necessárias em até 15 dias antes do congresso. Assim que fizer a inscrição, será encaminhada a um grupo de WhatsApp.",
   },
 ] as const;
 

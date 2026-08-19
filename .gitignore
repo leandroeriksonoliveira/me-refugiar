@@ -37,6 +37,9 @@ yarn-error.log*
 .vercel
 tmp-brand
 
+# raw Google Drive downloads
+/public/images/edicoes/drive/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

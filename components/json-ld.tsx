@@ -6,8 +6,8 @@ export function JsonLd() {
     "@type": "Event",
     name: `${siteConfig.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,
-    startDate: "2026-09-12",
-    endDate: "2026-09-14",
+    startDate: siteConfig.edition.startYmd,
+    endDate: siteConfig.edition.endYmd,
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     eventStatus: "https://schema.org/EventScheduled",
     organizer: {
@@ -26,7 +26,6 @@ export function JsonLd() {
         streetAddress: siteConfig.venue.address,
         addressLocality: siteConfig.venue.city,
         addressRegion: siteConfig.venue.state,
-        postalCode: siteConfig.venue.zip,
         addressCountry: "BR",
       },
     },

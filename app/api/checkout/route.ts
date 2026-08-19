@@ -44,7 +44,7 @@ export async function POST(request: Request) {
       customerId,
       body,
       ticket.price,
-      `Me Refugiar 2026 — ${ticket.name} — ${body.name}`,
+      `Me Refugiar 2027 — ${ticket.name} — ${body.name}`,
       getClientIp(request),
     );
 

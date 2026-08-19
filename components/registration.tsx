@@ -42,8 +42,8 @@ const emptyForm: FormState = {
   email: "",
   phone: "",
   city: "",
-  state: "SP",
-  ticketId: "lote-regular",
+  state: "MG",
+  ticketId: "lote-antecipado",
   billingType: "PIX",
   holderName: "",
   cardNumber: "",
@@ -156,7 +156,7 @@ export function Registration() {
             light
             eyebrow="Inscrição"
             title="Garanta o seu lugar neste refúgio"
-            description="Preencha seus dados, escolha o lote e conclua o pagamento com PIX ou cartão. A confirmação é automática."
+            description="As inscrições para 2027 já estão abertas. Você pode pagar via PIX ou parcelado no cartão. Assim que fizer a inscrição, você será encaminhada a um grupo de WhatsApp. Fique atenta: todas as informações necessárias chegam em até 15 dias antes do congresso."
           />
         </FadeIn>
 
@@ -170,6 +170,10 @@ export function Registration() {
                 <h3 className="mt-5 font-serif text-3xl">Inscrição confirmada</h3>
                 <p className="mt-3 text-muted">
                   Sua vaga no {result.ticketName} está garantida. Enviamos os detalhes para {form.email}.
+                </p>
+                <p className="mt-4 text-sm leading-relaxed text-muted">
+                  Você será encaminhada a um grupo de WhatsApp. Fique atenta: todas
+                  as informações necessárias chegam em até 15 dias antes do congresso.
                 </p>
               </div>
             ) : result.billingType === "PIX" && result.pix ? (
@@ -243,6 +247,11 @@ export function Registration() {
                         <p className={`mt-2 text-sm ${selected ? "text-muted" : "text-blush/80"}`}>
                           {ticket.description}
                         </p>
+                        <ul className={`mt-3 space-y-1 text-xs ${selected ? "text-muted" : "text-blush/70"}`}>
+                          {ticket.benefits.map((benefit) => (
+                            <li key={benefit}>· {benefit}</li>
+                          ))}
+                        </ul>
                       </div>
                       <p className="shrink-0 font-serif text-2xl">{formatCurrency(ticket.price)}</p>
                     </div>
@@ -331,7 +340,7 @@ export function Registration() {
                   className={methodClass(form.billingType === "CREDIT_CARD")}
                 >
                   <CreditCard size={18} />
-                  Cartão
+                  Parcelado
                 </button>
               </div>
 

@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     "Me Refugiar",
     "Congresso para Mulheres",
     "Renata Vitorino Coelho",
+    "Mateus Leme",
     "retiro feminino",
     "congresso cristão",
     "restauração",

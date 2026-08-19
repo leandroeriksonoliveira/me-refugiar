@@ -40,9 +40,11 @@ export function Footer() {
           <p className="mt-4 font-serif text-2xl">{siteConfig.venue.name}</p>
           <p className="mt-2 flex items-start gap-2 text-sm text-blush/80">
             <MapPin size={16} className="mt-0.5 shrink-0 text-gold" />
-            {siteConfig.venue.address}, {siteConfig.venue.neighborhood}
-            <br />
-            {siteConfig.venue.city}/{siteConfig.venue.state} · {siteConfig.venue.zip}
+            <span>
+              {siteConfig.venue.address}, {siteConfig.venue.city} — {siteConfig.venue.state}
+              <br />
+              {siteConfig.venue.note}
+            </span>
           </p>
           <a
             href={siteConfig.venue.mapsUrl}

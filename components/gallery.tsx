@@ -78,13 +78,16 @@ export function Gallery() {
                 onClick={() => setVideo(item.id)}
                 className="group w-full overflow-hidden rounded-[1.6rem] border border-gold/15 bg-white text-left"
               >
-                <div className="relative aspect-video">
-                  <Image
-                    src={`https://i.ytimg.com/vi/${item.id}/hqdefault.jpg`}
-                    alt={item.title}
-                    fill
-                    className="object-cover transition duration-500 group-hover:scale-105"
-                  />
+                <div className="relative aspect-video bg-earth">
+                  {"src" in item && item.src ? (
+                    <video
+                      src={item.src}
+                      muted
+                      playsInline
+                      preload="metadata"
+                      className="h-full w-full object-cover"
+                    />
+                  ) : null}
                   <span className="absolute inset-0 grid place-items-center bg-earth/30">
                     <span className="grid h-14 w-14 place-items-center rounded-full bg-cream/95 text-velvet">
                       <Play size={22} fill="currentColor" />
@@ -186,13 +189,29 @@ export function Gallery() {
               className="aspect-video w-full max-w-4xl overflow-hidden rounded-2xl bg-black"
               onClick={(event) => event.stopPropagation()}
             >
-              <iframe
-                src={`https://www.youtube.com/embed/${video}?autoplay=1`}
-                title="Vídeo do congresso"
-                className="h-full w-full"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-              />
+              {(() => {
+                const item = videos.find((v) => v.id === video);
+                if (item && "src" in item && item.src) {
+                  return (
+                    <video
+                      src={item.src}
+                      controls
+                      autoPlay
+                      playsInline
+                      className="h-full w-full"
+                    />
+                  );
+                }
+                return (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video}?autoplay=1`}
+                    title="Vídeo do congresso"
+                    className="h-full w-full"
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                  />
+                );
+              })()}
             </div>
           </motion.div>
         ) : null}

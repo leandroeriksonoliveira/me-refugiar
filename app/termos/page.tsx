@@ -24,9 +24,10 @@ export default function TermosPage() {
       </p>
       <h2 className="font-serif text-2xl text-earth">2. Cancelamento</h2>
       <p>
-        Cancelamentos com até 15 dias de antecedência têm reembolso de 80% do
-        valor pago. Entre 14 e 7 dias, a inscrição pode ser transferida para outra
-        participante. Após esse prazo, não há reembolso financeiro.
+        Cancelamentos com até 30 dias de antecedência têm reembolso de 50% do
+        valor pago. Entre 14 e 7 dias, o crédito pode ser transferido para outra
+        participante. Após esse prazo, não há reembolso, mas a vaga pode ser
+        cedida mediante aviso.
       </p>
       <h2 className="font-serif text-2xl text-earth">3. Conduta</h2>
       <p>

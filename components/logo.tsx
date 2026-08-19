@@ -33,7 +33,7 @@ export function Logo({ className = "", light = false, variant = "nav" }: LogoPro
           alt={alt}
           width={480}
           height={664}
-          className="h-10 w-auto sm:h-12"
+          className="h-11 w-auto sm:h-12 md:h-14"
         />
       </Link>
     );

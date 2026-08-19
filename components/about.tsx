@@ -9,17 +9,17 @@ const pillars = [
   {
     icon: Heart,
     title: "Refúgio",
-    text: "Um tempo para sair da pressa e se esconder em Deus, sem máscaras e sem pressa de performar fé.",
+    text: "Um tempo para sair e parar, se voltar para Deus, sem distrações. Olhando para Ele e sendo iluminadas.",
   },
   {
     icon: Sparkles,
     title: "Restauração",
-    text: "Palavra, oração e cuidado pastoral para curar feridas, renovar a identidade e reabrir o coração.",
+    text: "Palavra, oração e cuidado, envolvidas e imersas na Palavra para curar feridas, renovar a identidade e avançar para o propósito.",
   },
   {
     icon: Users,
     title: "Comunhão",
-    text: "Mulheres caminhando juntas — um espaço seguro para partilhar, chorar, rir e recomeçar.",
+    text: "Mulheres caminhando juntas — um espaço seguro para partilhar, chorar, rir, abraços apertados, recomeçar.",
   },
 ];
 
@@ -30,8 +30,8 @@ export function About() {
         <FadeIn>
           <SectionHeading
             eyebrow="O congresso"
-            title="Um lugar para voltar para casa"
-            description="O Me Refugiar nasceu do desejo de criar um encontro onde a mulher possa descansar, ser vista e lembrar quem ela é diante de Deus. Não é um evento para impressionar. É um tempo para restaurar."
+            title="Um lugar de restauração para recomeçar"
+            description={`${siteConfig.congressLine} Idealizado e ministrado por ${siteConfig.speaker}.`}
           />
         </FadeIn>
 
@@ -84,20 +84,24 @@ export function About() {
             <div className="gold-rule my-6 w-24" />
             <div className="space-y-4 text-[15px] leading-relaxed text-muted">
               <p>
-                Renata Vitorino Coelho carrega um chamado claro: acompanhar mulheres
-                até o lugar seguro onde Deus as espera. Com uma voz acolhedora e uma
-                escuta pastoral, ela tem conduzido encontros de restauração, ensino
-                bíblico e cuidado emocional.
+                Renata Vitorino Coelho carrega um chamado claro e uma missão que não
+                caminha sozinha. Ao seu lado, existe uma equipe indispensável,
+                formada por mulheres com o coração disposto a amar, servir e
+                acolher. Juntas, acompanham mulheres até um lugar seguro — um
+                lugar de encontro, onde Deus as espera para transformar histórias
+                e gerar novos começos.
               </p>
               <p>
-                Idealizadora do Congresso Me Refugiar, Renata une profundidade
-                espiritual e delicadeza humana. Sua mensagem convida cada mulher a
-                largar o peso, reconhecer a própria história e se esconder no
-                refúgio que não falha.
+                Com uma voz acolhedora e sensível à voz do Espírito Santo, Renata
+                tem conduzido encontros marcados por restauração, ensino bíblico,
+                cuidado emocional e fé. Um espaço onde cada mulher é convidada a
+                ser vista, ouvida, cuidada e fortalecida.
               </p>
               <p className="font-serif text-xl text-velvet italic">
-                “Há um lugar em Deus onde a alma cansa de lutar e começa a
-                descansar.”
+                “{siteConfig.verse.text}”
+              </p>
+              <p className="text-xs tracking-[0.18em] text-gold uppercase">
+                {siteConfig.verse.ref}
               </p>
             </div>
           </FadeIn>

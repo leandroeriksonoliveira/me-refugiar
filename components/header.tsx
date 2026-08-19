@@ -6,7 +6,9 @@ import { Logo } from "@/components/logo";
 
 const links = [
   { href: "#sobre", label: "Sobre" },
+  { href: "#historia", label: "História" },
   { href: "#galeria", label: "Galeria" },
+  { href: "#produtos", label: "Produtos" },
   { href: "#programacao", label: "Programação" },
   { href: "#inscricao", label: "Inscrição" },
   { href: "#contato", label: "Contato" },
@@ -39,7 +41,10 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:px-8 sm:py-3">
-        <Logo light={!scrolled && !open} />
+        <Logo
+          light={!scrolled && !open}
+          variant={scrolled || open ? "nav" : "mark"}
+        />
 
         <nav className="hidden items-center gap-8 lg:flex">
           {links.map((link) => (
