@@ -40,18 +40,15 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:px-8 sm:py-3">
-        <Logo
-          light={!scrolled && !open}
-          variant={scrolled || open ? "nav" : "mark"}
-        />
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:h-[4.25rem] sm:px-8">
+        <Logo light={!scrolled && !open} variant="nav" />
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden min-w-0 items-center gap-3 xl:gap-6 lg:flex">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm tracking-wide transition hover:text-gold ${
+              className={`shrink-0 text-[13px] tracking-wide whitespace-nowrap transition hover:text-gold xl:text-sm ${
                 scrolled ? "text-earth" : "text-cream/90"
               }`}
             >
@@ -60,7 +57,7 @@ export function Header() {
           ))}
           <a
             href="#inscricao"
-            className="rounded-full bg-velvet px-5 py-2.5 text-sm font-medium text-cream shadow-md transition hover:bg-burgundy"
+            className="shrink-0 rounded-full bg-velvet px-4 py-2 text-[13px] font-medium text-cream shadow-md transition hover:bg-burgundy xl:px-5 xl:py-2.5 xl:text-sm"
           >
             Garantir Minha Vaga
           </a>

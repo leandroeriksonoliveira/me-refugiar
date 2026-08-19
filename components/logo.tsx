@@ -40,13 +40,16 @@ export function Logo({ className = "", light = false, variant = "nav" }: LogoPro
   }
 
   return (
-    <Link href="/" className={`inline-flex min-w-0 max-w-[calc(100%-3.5rem)] items-center gap-2 sm:gap-2.5 ${className}`}>
+    <Link
+      href="/"
+      className={`inline-flex min-w-0 max-w-[calc(100%-3.5rem)] shrink-0 items-center gap-2 lg:max-w-none sm:gap-2.5 ${className}`}
+    >
       <Image
         src={light ? "/brand/logo-mark-light.png" : "/brand/logo-mark.png"}
         alt=""
         width={480}
         height={664}
-        className="h-9 w-auto shrink-0 sm:h-11 md:h-12"
+        className="h-8 w-auto shrink-0 sm:h-9"
         priority
       />
       <Image
@@ -54,7 +57,7 @@ export function Logo({ className = "", light = false, variant = "nav" }: LogoPro
         alt={alt}
         width={800}
         height={211}
-        className="h-6 w-auto max-w-[58vw] object-contain object-left sm:h-8 sm:max-w-none md:h-9"
+        className="h-5 w-auto object-contain object-left sm:h-6 md:h-7"
         priority
       />
     </Link>

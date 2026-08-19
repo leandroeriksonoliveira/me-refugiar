@@ -10,56 +10,53 @@ export function Hero() {
   return (
     <section id="inicio" className="relative isolate min-h-[100svh] overflow-hidden">
       <Image
-        src="/images/edicoes/comunhao.jpg"
-        alt="Mulheres reunidas em comunhão no Me Refugiar"
+        src="https://images.unsplash.com/photo-1474418397713-7ede21d49118?auto=format&fit=crop&w=2400&q=80"
+        alt="Ambiente acolhedor e luminoso do Congresso Me Refugiar"
         fill
         priority
-        className="hero-image object-cover object-[center_35%]"
+        className="hero-image object-cover object-[center_30%] sm:object-center"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-earth/90 via-earth/70 to-earth/35" />
-      <div className="absolute inset-0 bg-gradient-to-t from-earth/85 via-transparent to-earth/45" />
+      <div className="absolute inset-0 bg-gradient-to-b from-earth/70 via-burgundy/55 to-earth/85" />
+      <div className="grain absolute inset-0" />
 
-      <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-4 pb-[calc(5.5rem+env(safe-area-inset-bottom))] pt-28 sm:px-8 sm:pb-24 sm:pt-32">
+      <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-4 pb-[calc(5.5rem+env(safe-area-inset-bottom))] pt-24 sm:px-8 sm:pb-28 sm:pt-28">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-[10px] tracking-[0.22em] text-gold-soft uppercase sm:text-xs sm:tracking-[0.32em]"
+          className="max-w-full text-[10px] leading-relaxed tracking-[0.18em] text-gold-soft uppercase sm:text-xs sm:tracking-[0.35em]"
         >
-          Congresso para mulheres · {siteConfig.edition.title}
+          {siteConfig.tagline} · {siteConfig.edition.title}
         </motion.p>
-
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.08 }}
-          className="mt-4 font-serif text-5xl leading-[0.95] text-cream sm:text-7xl"
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="mt-4 max-w-lg sm:mt-5"
         >
-          Me Refugiar
+          <Image
+            src="/brand/logo-full-light.png"
+            alt="Me Refugiar — Ministério de Mulheres"
+            width={900}
+            height={587}
+            priority
+            className="h-auto w-[min(100%,16rem)] sm:w-[22rem]"
+          />
         </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.18 }}
-          className="mt-3 text-sm tracking-[0.22em] text-gold-soft uppercase"
-        >
-          Ministério de mulheres
-        </motion.p>
-
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.25 }}
-          className="mt-6 max-w-xl text-base leading-relaxed text-cream/90 sm:text-lg"
+          transition={{ delay: 0.2 }}
+          className="mt-5 max-w-xl text-base leading-relaxed text-cream/90 sm:mt-6 sm:text-lg"
         >
           {siteConfig.congressLine}
         </motion.p>
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="mt-3 max-w-lg text-sm text-gold-soft sm:text-base"
+          transition={{ delay: 0.28 }}
+          className="mt-3 text-sm text-gold-soft sm:text-base"
         >
           {siteConfig.edition.theme} · {siteConfig.edition.sessions} ministrações
         </motion.p>
@@ -68,38 +65,16 @@ export function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.32 }}
-          className="mt-5"
+          className="mt-4"
         >
           <Countdown light />
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.38 }}
-          className="mt-4 inline-flex items-center gap-2 text-sm text-cream/85"
-        >
-          <CalendarDays size={16} className="text-gold-soft" />
-          {siteConfig.edition.dates}
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.42 }}
-          className="mt-3 inline-flex items-start gap-2 text-sm text-cream/85"
-        >
-          <MapPin size={16} className="mt-0.5 shrink-0 text-gold-soft" />
-          <span>
-            {siteConfig.venue.name} · {siteConfig.venue.city} — {siteConfig.venue.state}
-          </span>
-        </motion.p>
-
         <motion.blockquote
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.46 }}
-          className="mt-5 max-w-md font-serif text-base italic leading-relaxed text-gold-soft sm:text-lg"
+          transition={{ delay: 0.38 }}
+          className="mt-4 max-w-md font-serif text-base italic leading-relaxed text-gold-soft"
         >
           “{siteConfig.verse.text}”
           <cite className="mt-1 block not-italic text-xs tracking-[0.18em] text-cream/70 uppercase">
@@ -110,8 +85,8 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center"
+          transition={{ delay: 0.45 }}
+          className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center sm:gap-4"
         >
           <a
             href="#inscricao"
@@ -126,6 +101,17 @@ export function Hero() {
             Conhecer o congresso
           </a>
         </motion.div>
+
+        <div className="mt-8 flex flex-col gap-3 text-sm text-cream/80 sm:mt-10 sm:flex-row sm:gap-8">
+          <span className="inline-flex items-center gap-2">
+            <CalendarDays size={16} className="text-gold-soft" />
+            {siteConfig.edition.dates}
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <MapPin size={16} className="text-gold-soft" />
+            {siteConfig.venue.name} · {siteConfig.venue.city} — {siteConfig.venue.state}
+          </span>
+        </div>
       </div>
     </section>
   );
