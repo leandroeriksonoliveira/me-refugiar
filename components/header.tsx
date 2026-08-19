@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/logo";
 
@@ -10,6 +11,7 @@ const links = [
   { href: "#galeria", label: "Galeria" },
   { href: "#produtos", label: "Produtos" },
   { href: "#programacao", label: "Programação" },
+  { href: "/oracao", label: "Oração" },
   { href: "#contato", label: "Contato" },
 ];
 
@@ -31,7 +33,14 @@ export function Header() {
     };
   }, [open]);
 
-  const overHero = !scrolled && !open;
+  const pathname = usePathname();
+  const onHome = pathname === "/";
+  const overHero = onHome && !scrolled && !open;
+
+  function navHref(href: string) {
+    if (href.startsWith("/")) return href;
+    return onHome ? href : `/${href}`;
+  }
 
   return (
     <header
@@ -48,18 +57,22 @@ export function Header() {
           {links.map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={navHref(link.href)}
               className={`rounded-full px-3 py-2 text-[13px] tracking-wide whitespace-nowrap transition xl:px-3.5 ${
-                overHero
-                  ? "text-cream/90 hover:bg-cream/10 hover:text-cream"
-                  : "text-earth/80 hover:bg-sand/60 hover:text-earth"
+                pathname === link.href
+                  ? overHero
+                    ? "bg-cream/15 text-cream"
+                    : "bg-sand/80 text-earth"
+                  : overHero
+                    ? "text-cream/90 hover:bg-cream/10 hover:text-cream"
+                    : "text-earth/80 hover:bg-sand/60 hover:text-earth"
               }`}
             >
               {link.label}
             </a>
           ))}
           <a
-            href="#inscricao"
+            href={navHref("#inscricao")}
             className="ml-2 rounded-full bg-velvet px-5 py-2 text-[13px] font-medium text-cream shadow-sm transition hover:bg-burgundy"
           >
             Garantir vaga
@@ -85,7 +98,7 @@ export function Header() {
             {links.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={navHref(link.href)}
                 className="rounded-xl px-2 py-3 text-lg text-earth"
                 onClick={() => setOpen(false)}
               >
@@ -93,7 +106,7 @@ export function Header() {
               </a>
             ))}
             <a
-              href="#inscricao"
+              href={navHref("#inscricao")}
               onClick={() => setOpen(false)}
               className="mt-3 rounded-full bg-velvet px-5 py-3.5 text-center text-sm font-medium text-cream"
             >

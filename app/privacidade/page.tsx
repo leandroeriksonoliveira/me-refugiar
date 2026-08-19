@@ -40,7 +40,14 @@ export default function PrivacidadePage() {
         WhatsApp de suporte, ressalvadas as obrigações legais de guarda de
         registros financeiros.
       </p>
-      <h2 className="font-serif text-2xl text-earth">5. Contato</h2>
+      <h2 className="font-serif text-2xl text-earth">5. Pedidos de oração</h2>
+      <p>
+        Os pedidos enviados pelo formulário de oração são lidos apenas pela
+        organização do {siteConfig.name}, para intercessão. Não são publicados,
+        compartilhados ou usados para marketing. Você pode escrever de forma
+        anônima, sem informar o nome.
+      </p>
+      <h2 className="font-serif text-2xl text-earth">6. Contato</h2>
       <p>
         Para exercer direitos previstos na LGPD, fale com a organização do
         {` ${siteConfig.name}`} pelos canais oficiais do site.

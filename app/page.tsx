@@ -5,6 +5,7 @@ import { Gallery } from "@/components/gallery";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { JsonLd } from "@/components/json-ld";
+import { PrayerInvite } from "@/components/prayer-invite";
 import { Products } from "@/components/products";
 import { Registration } from "@/components/registration";
 import { Schedule } from "@/components/schedule";
@@ -23,6 +24,7 @@ export default function Home() {
         <Gallery />
         <Products />
         <Schedule />
+        <PrayerInvite />
         <Registration />
         <FAQ />
       </main>

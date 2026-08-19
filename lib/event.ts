@@ -247,6 +247,11 @@ export const faqs = [
     answer:
       "Você receberá todas as informações necessárias em até 15 dias antes do congresso. Assim que fizer a inscrição, será encaminhada a um grupo de WhatsApp.",
   },
+  {
+    question: "Posso enviar um pedido de oração?",
+    answer:
+      "Sim. Qualquer pessoa pode deixar um pedido confidencial na página de oração. Somente a organização do Me Refugiar lê os pedidos — eles não são publicados no site.",
+  },
 ] as const;
 
 export const brazilStates = [

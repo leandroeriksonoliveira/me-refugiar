@@ -30,22 +30,32 @@ export function Hero() {
           {siteConfig.tagline} · {siteConfig.edition.title}
         </motion.p>
 
-        <motion.h1
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.08 }}
-          className="mt-4 font-serif text-5xl leading-[0.95] text-cream sm:text-7xl"
+          className="mt-4 flex items-center gap-3 sm:gap-4 md:gap-5"
         >
-          Me Refugiar
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.16 }}
-          className="mt-3 text-[11px] tracking-[0.28em] text-gold-soft uppercase sm:text-xs"
-        >
-          Mulheres
-        </motion.p>
+          <Image
+            src="/brand/logo-mark-light.png"
+            alt=""
+            width={56}
+            height={78}
+            className="h-10 w-auto max-h-10 shrink-0 object-contain sm:h-12 sm:max-h-12 md:h-14 md:max-h-14"
+            priority
+          />
+          <div className="min-w-0 pb-7 sm:pb-8">
+            <h1 className="font-serif text-[2.5rem] leading-[0.95] whitespace-nowrap text-cream sm:text-6xl md:text-7xl">
+              <span className="relative inline-block">
+                Me Refu
+                <span className="absolute top-full left-0 right-0 mt-2 text-right text-[11px] tracking-[0.28em] text-gold-soft uppercase sm:text-xs sm:tracking-[0.32em]">
+                  Mulheres
+                </span>
+              </span>
+              giar
+            </h1>
+          </div>
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 16 }}

@@ -75,9 +75,14 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a href="#inscricao" className="hover:text-gold-soft">
+              <Link href="/oracao" className="hover:text-gold-soft">
+                Pedido de oração
+              </Link>
+            </li>
+            <li>
+              <Link href="/#inscricao" className="hover:text-gold-soft">
                 Inscrição
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

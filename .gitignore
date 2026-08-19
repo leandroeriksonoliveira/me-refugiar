@@ -40,6 +40,9 @@ tmp-brand
 # raw Google Drive downloads
 /public/images/edicoes/drive/
 
+# pedidos de oração (armazenamento local)
+/data/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
