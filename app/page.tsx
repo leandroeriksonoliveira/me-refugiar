@@ -10,6 +10,7 @@ import { Products } from "@/components/products";
 import { Registration } from "@/components/registration";
 import { Schedule } from "@/components/schedule";
 import { Story } from "@/components/story";
+import { Testimonials } from "@/components/testimonials";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <About />
         <Story />
         <Gallery />
+        <Testimonials />
         <Products />
         <Schedule />
         <PrayerInvite />
