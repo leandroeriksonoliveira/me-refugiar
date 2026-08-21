@@ -13,6 +13,16 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.merefugiar.com.br" }],
+        destination: "https://merefugiar.com.br/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

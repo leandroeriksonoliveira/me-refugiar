@@ -1,6 +1,6 @@
 # Me Refugiar — Congresso para Mulheres
 
-Site oficial do congresso idealizado e ministrado por **Renata Vitorino Coelho**. Construído com Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion e integração de pagamentos via API do Asaas (PIX e cartão de crédito).
+Site oficial do congresso idealizado e ministrado por **Renata Vitorino Coelho**: [merefugiar.com.br](https://merefugiar.com.br). Construído com Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion e integração de pagamentos via API do Asaas (PIX e cartão de crédito).
 
 ## Stack
 
@@ -26,14 +26,15 @@ Abra [http://localhost:3000](http://localhost:3000).
 | --- | --- |
 | `ASAAS_API_KEY` | Chave de API do Asaas (sandbox ou produção) |
 | `ASAAS_API_URL` | `https://api-sandbox.asaas.com` ou `https://api.asaas.com` |
+| `NEXT_PUBLIC_SITE_URL` | URL canônica do site, `https://merefugiar.com.br` |
 | `NEXT_PUBLIC_WHATSAPP_NUMBER` | Número de suporte com DDI, ex: `5511999999999` |
 
-Opcional: `ASAAS_WEBHOOK_TOKEN` (validado no header `asaas-access-token`) e `NEXT_PUBLIC_SITE_URL` para SEO.
+Opcional: `ASAAS_WEBHOOK_TOKEN` (validado no header `asaas-access-token`).
 
 ## Pagamentos Asaas
 
 1. Crie uma conta no [sandbox](https://sandbox.asaas.com/) e gere a API Key.
-2. Configure o webhook para `https://seu-dominio/api/webhooks/asaas` com os eventos de cobrança.
+2. Configure o webhook para `https://merefugiar.com.br/api/webhooks/asaas` com os eventos de cobrança.
 3. O checkout cria/reutiliza o cliente, gera a cobrança e, no PIX, devolve QR Code + copia e cola.
 4. O cartão é processado imediatamente no servidor. Os dados do cartão **não são persistidos**.
 

@@ -171,6 +171,42 @@ export const videos = [
   },
 ] as const;
 
+export const testimonials = [
+  {
+    quote:
+      "Não tenho palavras para descrever tudo o que foi feito ali, simplesmente sobrenatural.",
+  },
+  {
+    quote: "Foi maravilhoso… tremendo, eu amei.",
+  },
+  {
+    quote:
+      "Que tempo precioso, eu estou como quem sonha. Daqui pra frente, se Deus quiser, não perderei nenhum encontro. Sei que verei os frutos de todo ensino, de cada semente lançada em meu coração, germinar e dar muitos frutos pra honra e glória do Senhor. O Me Refugiar Mulheres é tremendo.",
+  },
+  {
+    quote: "Uma renovação para o novo tempo.",
+  },
+  {
+    quote: "Batismo de Renovação!!! Novos ciclos.",
+  },
+  {
+    quote:
+      "Como sempre, em todos a presença de Deus é real. Cada ministração, cada detalhe — e o sentimento é que fomos escolhidas, acolhidas, e o Espírito Santo falou em especial com cada mulher nos detalhes. Meu terceiro, e já estou contando os dias para o próximo… Deus é maravilhoso.",
+  },
+  {
+    quote:
+      "Foi ótima, tudo que eu precisava: ouvir, sentir. O Senhor sabe de toda a nossa necessidade, e usa pessoas moldadas e escolhidas por Ele para nos ajudar, nos moldar pra melhor para servi-Lo.",
+  },
+  {
+    quote:
+      "Experiência maravilhosa e inesquecível. Acrescentou muito em minha vida e modificou minha visão sobre algumas coisas. E, mais importante: me impulsionou a tentar ser uma pessoa melhor. Agradeço imensamente à Renata, Érika e Fernanda. Deus as abençoe infinitamente.",
+  },
+  {
+    quote:
+      "Chega a ser inexplicável o tanto que eu senti o Espírito Santo em todas as dinâmicas. Eu precisava ouvir tudo aquilo, precisava saber que Deus tá me vendo o tempo todo.",
+  },
+] as const;
+
 export const brandedProducts = [
   {
     name: "Crachá",
