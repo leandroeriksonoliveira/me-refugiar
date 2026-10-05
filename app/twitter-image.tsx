@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Me Refugiar — Congresso para Mulheres";
+export const alt = "Me Refugiar — Encontro com Deus para Mulheres";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -20,16 +20,16 @@ export default function TwitterImage() {
         }}
       >
         <div style={{ fontSize: 22, letterSpacing: 8, textTransform: "uppercase", color: "#e8c9bf" }}>
-          Congresso para Mulheres
+          Encontro com Deus para Mulheres
         </div>
         <div style={{ fontSize: 96, fontFamily: "Georgia, serif", marginTop: 16, lineHeight: 0.95 }}>
           Me Refugiar
         </div>
         <div style={{ fontSize: 28, marginTop: 24, color: "#dbb0a0", maxWidth: 780 }}>
-          Mais Profundo Nele · 4, 5 e 6 de junho de 2027
+          Mais Profundo Nele · 5 e 6 de junho de 2027
         </div>
         <div style={{ marginTop: 40, fontSize: 22, color: "#e9b586" }}>
-          Com Renata Vitorino Coelho · 12 ministrações
+          Com Renata Vitorino Coelho
         </div>
       </div>
     ),

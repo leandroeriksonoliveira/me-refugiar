@@ -11,7 +11,7 @@ export function Hero() {
     <section id="inicio" className="relative isolate min-h-[100svh] overflow-hidden">
       <Image
         src="https://images.unsplash.com/photo-1474418397713-7ede21d49118?auto=format&fit=crop&w=2400&q=80"
-        alt="Ambiente acolhedor e luminoso do Congresso Me Refugiar"
+        alt="Ambiente acolhedor e luminoso do Me Refugiar Mulheres"
         fill
         priority
         className="hero-image object-cover object-[center_30%] sm:object-center"
@@ -71,7 +71,7 @@ export function Hero() {
           transition={{ delay: 0.28 }}
           className="mt-3 text-sm text-gold-soft"
         >
-          {siteConfig.edition.theme} · {siteConfig.edition.sessions} ministrações
+          {siteConfig.edition.theme}
         </motion.p>
 
         <motion.div
@@ -111,7 +111,7 @@ export function Hero() {
             href="#sobre"
             className="inline-flex w-full items-center justify-center rounded-full border border-cream/30 px-8 py-3.5 text-sm text-cream transition hover:border-gold-soft hover:text-gold-soft sm:w-auto"
           >
-            Conhecer o congresso
+            Conhecer o encontro
           </a>
         </motion.div>
 

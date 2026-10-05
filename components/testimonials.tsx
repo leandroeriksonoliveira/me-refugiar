@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useEffectEvent, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -18,15 +18,18 @@ export function Testimonials() {
   const current = testimonials[index];
   const total = testimonials.length;
 
-  const goTo = useEffectEvent((next: number) => {
+  function goTo(next: number) {
     setIndex((next + total) % total);
-  });
+  }
 
   useEffect(() => {
     if (paused) return;
-    const id = window.setInterval(() => goTo(index + 1), AUTO_MS);
+    const id = window.setInterval(
+      () => setIndex((value) => (value + 1) % total),
+      AUTO_MS,
+    );
     return () => window.clearInterval(id);
-  }, [index, paused]);
+  }, [index, paused, total]);
 
   return (
     <section
@@ -55,7 +58,7 @@ export function Testimonials() {
           <SectionHeading
             light
             eyebrow="Testemunhos"
-            title="O que Deus já fez nelas"
+            title="O que Deus já fez"
             description="Vozes de mulheres que passaram pelo Me Refugiar — e saíram renovadas."
           />
         </FadeIn>

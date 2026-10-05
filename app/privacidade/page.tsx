@@ -11,7 +11,7 @@ export default function PrivacidadePage() {
   return (
     <LegalPage title="Política de privacidade">
       <p>
-        Esta política descreve como o Congresso {siteConfig.name} coleta e utiliza
+        Esta política descreve como o {siteConfig.name} Mulheres coleta e utiliza
         dados pessoais para realizar inscrições, pagamentos e comunicação com as
         participantes, em conformidade com a Lei Geral de Proteção de Dados
         (LGPD).

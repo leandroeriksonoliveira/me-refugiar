@@ -11,7 +11,7 @@ export default function TermosPage() {
   return (
     <LegalPage title="Termos de uso">
       <p>
-        Ao acessar este site e concluir uma inscrição no Congresso {siteConfig.name},
+        Ao acessar este site e concluir uma inscrição no {siteConfig.name} Mulheres,
         você concorda com as condições abaixo. O evento é idealizado e ministrado
         por {siteConfig.speaker}.
       </p>
@@ -31,7 +31,7 @@ export default function TermosPage() {
       </p>
       <h2 className="font-serif text-2xl text-earth">3. Conduta</h2>
       <p>
-        O congresso é um espaço exclusivo para mulheres, dedicado ao acolhimento
+        O encontro é um espaço exclusivo para mulheres, dedicado ao acolhimento
         espiritual. Reservamo-nos o direito de recusar ou interromper a
         participação em casos de conduta que comprometa a segurança ou o clima
         do encontro.

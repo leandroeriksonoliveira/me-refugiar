@@ -25,11 +25,11 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     "Me Refugiar",
-    "Congresso para Mulheres",
+    "Encontro com Deus para Mulheres",
     "Renata Vitorino Coelho",
     "Mateus Leme",
     "retiro feminino",
-    "congresso cristão",
+    "encontro cristão",
     "restauração",
   ],
   authors: [{ name: siteConfig.speaker }],

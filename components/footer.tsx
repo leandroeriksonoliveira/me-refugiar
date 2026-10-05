@@ -75,21 +75,6 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a
-                href={siteConfig.whatsappGroupUrl}
-                className="hover:text-gold-soft"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Entrar no grupo
-              </a>
-            </li>
-            <li>
-              <Link href="/oracao" className="hover:text-gold-soft">
-                Pedido de oração
-              </Link>
-            </li>
-            <li>
               <Link href="/#inscricao" className="hover:text-gold-soft">
                 Inscrição
               </Link>

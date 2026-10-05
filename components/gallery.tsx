@@ -3,29 +3,25 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, Play, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { FadeIn } from "@/components/ui/fade-in";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { galleryImages, videos } from "@/lib/event";
+import { galleryImages } from "@/lib/event";
 
 export function Gallery() {
   const [active, setActive] = useState<number | null>(null);
-  const [video, setVideo] = useState<string | null>(null);
 
   const current = active !== null ? galleryImages[active] : null;
 
   useEffect(() => {
-    if (active === null && !video) return;
+    if (active === null) return;
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setActive(null);
-        setVideo(null);
-      }
-      if (active !== null && event.key === "ArrowRight") {
+      if (event.key === "Escape") setActive(null);
+      if (event.key === "ArrowRight") {
         setActive((value) => (value === null ? 0 : (value + 1) % galleryImages.length));
       }
-      if (active !== null && event.key === "ArrowLeft") {
+      if (event.key === "ArrowLeft") {
         setActive((value) =>
           value === null ? 0 : (value + galleryImages.length - 1) % galleryImages.length,
         );
@@ -33,7 +29,7 @@ export function Gallery() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [active, video]);
+  }, [active]);
 
   return (
     <section id="galeria" className="bg-cream py-16 sm:py-24 md:py-32">
@@ -65,39 +61,6 @@ export function Gallery() {
                 <span className="absolute bottom-3 left-3 font-serif text-cream opacity-0 transition group-hover:opacity-100">
                   {image.caption}
                 </span>
-              </button>
-            </FadeIn>
-          ))}
-        </div>
-
-        <div className="mt-16 grid gap-6 md:grid-cols-2">
-          {videos.map((item) => (
-            <FadeIn key={item.id}>
-              <button
-                type="button"
-                onClick={() => setVideo(item.id)}
-                className="group w-full overflow-hidden rounded-[1.6rem] border border-gold/15 bg-white text-left"
-              >
-                <div className="relative aspect-video bg-earth">
-                  {"src" in item && item.src ? (
-                    <video
-                      src={item.src}
-                      muted
-                      playsInline
-                      preload="metadata"
-                      className="h-full w-full object-cover"
-                    />
-                  ) : null}
-                  <span className="absolute inset-0 grid place-items-center bg-earth/30">
-                    <span className="grid h-14 w-14 place-items-center rounded-full bg-cream/95 text-velvet">
-                      <Play size={22} fill="currentColor" />
-                    </span>
-                  </span>
-                </div>
-                <div className="p-4 sm:p-6">
-                  <h3 className="font-serif text-xl text-earth sm:text-2xl">{item.title}</h3>
-                  <p className="mt-2 text-sm text-muted">{item.description}</p>
-                </div>
               </button>
             </FadeIn>
           ))}
@@ -164,55 +127,6 @@ export function Gallery() {
             >
               <ChevronRight size={28} />
             </button>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
-
-      <AnimatePresence>
-        {video ? (
-          <motion.div
-            className="fixed inset-0 z-[80] flex items-center justify-center bg-earth/85 p-3 sm:p-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setVideo(null)}
-          >
-            <button
-              type="button"
-              className="absolute top-[max(1rem,env(safe-area-inset-top))] right-4 grid h-10 w-10 place-items-center rounded-full bg-earth/60 text-cream"
-              aria-label="Fechar"
-              onClick={() => setVideo(null)}
-            >
-              <X size={20} />
-            </button>
-            <div
-              className="aspect-video w-full max-w-4xl overflow-hidden rounded-2xl bg-black"
-              onClick={(event) => event.stopPropagation()}
-            >
-              {(() => {
-                const item = videos.find((v) => v.id === video);
-                if (item && "src" in item && item.src) {
-                  return (
-                    <video
-                      src={item.src}
-                      controls
-                      autoPlay
-                      playsInline
-                      className="h-full w-full"
-                    />
-                  );
-                }
-                return (
-                  <iframe
-                    src={`https://www.youtube.com/embed/${video}?autoplay=1`}
-                    title="Vídeo do congresso"
-                    className="h-full w-full"
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                  />
-                );
-              })()}
-            </div>
           </motion.div>
         ) : null}
       </AnimatePresence>

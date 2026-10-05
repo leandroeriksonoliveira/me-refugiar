@@ -7,12 +7,11 @@ import { Logo } from "@/components/logo";
 
 const links = [
   { href: "#sobre", label: "Sobre" },
+  { href: "#programacao", label: "Programação" },
+  { href: "#testemunhos", label: "Testemunhos" },
   { href: "#historia", label: "História" },
   { href: "#galeria", label: "Galeria" },
-  { href: "#testemunhos", label: "Testemunhos" },
-  { href: "#produtos", label: "Produtos" },
-  { href: "#programacao", label: "Programação" },
-  { href: "/oracao", label: "Oração" },
+  { href: "#parcerias", label: "Parceria" },
   { href: "#contato", label: "Contato" },
 ];
 

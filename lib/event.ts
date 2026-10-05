@@ -1,11 +1,11 @@
 export const siteConfig = {
   name: "Me Refugiar",
-  tagline: "Congresso para Mulheres",
+  tagline: "Encontro com Deus para Mulheres",
   speaker: "Renata Vitorino Coelho",
   congressLine:
-    "Um congresso para mulheres encontrarem refúgio em Deus, restaurarem a identidade e renovarem a esperança.",
+    "Um final de semana dedicado a você, mulher, que deseja um encontro mais profundo com Deus! Dias de renovo, descanso, restauração e liberdade.",
   description:
-    "Um congresso para mulheres encontrarem refúgio em Deus, restaurarem a identidade e renovarem a esperança. Idealizado e ministrado por Renata Vitorino Coelho.",
+    "Um final de semana dedicado a você, mulher, que deseja um encontro mais profundo com Deus. Dias de renovo, descanso, restauração e liberdade. Idealizado e ministrado por Renata Vitorino Coelho.",
   verse: {
     text: "Andarei em liberdade, pois tenho buscado os teus preceitos.",
     ref: "Salmos 119:45",
@@ -15,7 +15,7 @@ export const siteConfig = {
   whatsappNumber:
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5531992898159",
   whatsappMessage:
-    "Olá! Gostaria de saber mais sobre o Congresso Me Refugiar.",
+    "Olá! Gostaria de saber mais sobre o Me Refugiar Mulheres.",
   whatsappGroupUrl:
     "https://chat.whatsapp.com/FURcmkmd5vb0zPCeYkSh8z?s=sh&p=a&ilr=1",
   social: {
@@ -34,12 +34,11 @@ export const siteConfig = {
   },
   edition: {
     title: "Edição 2027",
-    dates: "4, 5 e 6 de junho de 2027",
-    shortDates: "4–6 JUN 2027",
+    dates: "5 e 6 de junho de 2027",
+    shortDates: "5–6 JUN 2027",
     theme: "Mais Profundo Nele",
-    startYmd: "2027-06-04",
+    startYmd: "2027-06-05",
     endYmd: "2027-06-06",
-    sessions: 12,
   },
 } as const;
 
@@ -47,33 +46,23 @@ const ticketBenefits = [
   "Hospedagem no sítio",
   "4 refeições diárias",
   "12 ministrações",
-  "Grupo de WhatsApp após a inscrição",
 ] as const;
 
 export const tickets = [
   {
-    id: "lote-antecipado",
-    name: "Lote antecipado",
-    description: "Valor especial. Esgota primeiro — garanta sua vaga com antecedência.",
-    price: 350,
+    id: "lote-1",
+    name: "1º lote",
+    description: "Valor especial para quem garante a vaga primeiro.",
+    price: 420,
     badge: "Vagas limitadas",
     featured: true,
     benefits: ticketBenefits,
   },
   {
-    id: "lote-regular",
-    name: "Lote regular",
-    description: "A experiência completa do congresso no sítio.",
-    price: 380,
-    badge: "Aberto",
-    featured: false,
-    benefits: ticketBenefits,
-  },
-  {
-    id: "lote-ultimo",
-    name: "Último lote",
-    description: "Últimas vagas para viver dias intensos na Presença do Pai.",
-    price: 400,
+    id: "lote-2",
+    name: "2º lote",
+    description: "A experiência completa do final de semana no sítio.",
+    price: 450,
     badge: "Últimas vagas",
     featured: false,
     benefits: ticketBenefits,
@@ -83,18 +72,17 @@ export const tickets = [
 export type TicketId = (typeof tickets)[number]["id"];
 
 export const stats = [
-  { value: "5", label: "Edições realizadas", suffix: "" },
-  { value: "100", label: "Vidas impactadas", suffix: "+" },
-  { value: "3", label: "Estados representados", suffix: "" },
-  { value: "5", label: "Anos de ministério", suffix: "" },
+  { value: "+100", label: "Vidas impactadas" },
+  { value: "5", label: "Edições realizadas" },
+  { value: "+150", label: "Horas de ministração em 5 anos" },
 ] as const;
 
 export const schedule = {
-  note: "A programação será liberada na semana do evento. Se prepare para viver dias intensos, cheios da Presença do Pai.",
+  title: "Um final de semana para ir mais profundo Nele",
+  note: "A programação detalhada é enviada às pessoas inscritas na semana do evento. Prepare-se para o extraordinário de Deus.",
   days: [
-    { day: "Sexta-feira", date: "4 de junho" },
-    { day: "Sábado", date: "5 de junho" },
-    { day: "Domingo", date: "6 de junho" },
+    { day: "Sábado", date: "5 de junho", time: "A partir das 9h" },
+    { day: "Domingo", date: "6 de junho", time: "Encerramento às 15h" },
   ],
 } as const;
 
@@ -161,15 +149,14 @@ export const galleryImages = [
   },
 ] as const;
 
-export const videos = [
-  {
-    id: "edicao-anterior",
-    src: "/videos/edicao-anterior.mp4",
-    title: "Edições anteriores",
-    description:
-      "Um recorte dos encontros: palavra, comunhão e o que Deus já fez no Me Refugiar.",
-  },
-] as const;
+export const editionVideo: {
+  title: string;
+  src: string;
+  youtubeId?: string;
+} = {
+  title: "Vídeo da edição anterior do Me Refugiar Mulheres",
+  src: "/videos/edicao-anterior.mp4",
+};
 
 export const testimonials = [
   {
@@ -207,30 +194,6 @@ export const testimonials = [
   },
 ] as const;
 
-export const brandedProducts = [
-  {
-    name: "Crachá",
-    description:
-      "Identidade no peito: palestrante e encontrista, com a oliveira e a libélula em vinho e blush.",
-    src: "/images/produtos/cracha.jpg",
-    alt: "Crachás personalizados Me Refugiar — palestrante e encontrista",
-  },
-  {
-    name: "Garrafa",
-    description:
-      "Leve o refúgio no dia a dia. Três cores da paleta — terracota, vinho e areia — com a marca completa.",
-    src: "/images/produtos/garrafa.jpg",
-    alt: "Garrafas personalizadas Me Refugiar em vinho, areia e blush",
-  },
-  {
-    name: "Bag",
-    description:
-      "A bag do ministério: tecido no vinho profundo, logo em creme e o motivo botânico em toda a peça.",
-    src: "/images/produtos/bag.jpg",
-    alt: "Bag personalizada Me Refugiar Mulheres",
-  },
-] as const;
-
 export const luare = {
   name: "LUARE Semi Joias",
   slogan: "Estilo que reflete sua essência",
@@ -238,22 +201,22 @@ export const luare = {
   url: "https://luaresemijoias.com.br",
   flyer: "/images/parcerias/luare-cupom.jpg",
   description:
-    "Parceria para quem deseja levar um pedaço do encontro no corpo: semi joias com 7% off no site, com o cupom exclusivo do Me Refugiar.",
+    "Parceria para quem deseja contribuir com o crescimento do ministério: semi joias com 7% off no site, com o cupom exclusivo do Me Refugiar.",
 } as const;
 
 export const faqs = [
   {
     question: "Até quando posso me inscrever?",
     answer:
-      "As inscrições permanecem abertas até o preenchimento das vagas ou até o dia 20 de maio de 2027. O lote antecipado se esgota primeiro. Recomendamos garantir sua vaga com antecedência.",
+      "As inscrições permanecem abertas até o preenchimento das vagas ou até o dia 20 de maio de 2027. O 1º lote se esgota primeiro. Recomendamos garantir sua vaga com antecedência.",
   },
   {
     question: "O que devo levar?",
     answer:
-      "Traga Bíblia, roupas confortáveis, itens de higiene pessoal, roupa de cama e banho, protetor solar, repelente e um coração disposto. Lembre-se: você estará em um sítio.",
+      "Próximo ao evento, as inscritas receberão a programação e o regulamento com as orientações.",
   },
   {
-    question: "Onde acontece o congresso?",
+    question: "Onde acontece o encontro?",
     answer:
       "No Sítio Recanto do Quero-quero, Serra Azul, Mateus Leme — MG. De fácil acesso, próximo ao centro de Mateus Leme e a 60 km de Belo Horizonte.",
   },
@@ -266,14 +229,9 @@ export const faqs = [
     answer: "Sim, 4 refeições diárias.",
   },
   {
-    question: "Qual é a política de cancelamento?",
-    answer:
-      "Cancelamentos com até 30 dias de antecedência têm reembolso de 50% do valor pago. Entre 14 e 7 dias, o crédito pode ser transferido para outra participante. Após esse prazo, não há reembolso, mas a vaga pode ser cedida mediante aviso.",
-  },
-  {
     question: "O evento é apenas para mulheres?",
     answer:
-      "Sim. O Me Refugiar é um congresso exclusivo para mulheres adultas. É um espaço seguro, acolhedor e dedicado à restauração feminina.",
+      "Sim. O Me Refugiar é um encontro exclusivo para mulheres adultas. É um espaço seguro, acolhedor e dedicado à restauração feminina.",
   },
   {
     question: "Como funciona o pagamento?",
@@ -281,19 +239,14 @@ export const faqs = [
       "Você pode pagar via PIX (QR Code dinâmico ou copia e cola). A confirmação do PIX é automática assim que o banco liquida a cobrança. E também parcelado no cartão.",
   },
   {
-    question: "Quando recebo as informações do congresso?",
+    question: "Quando recebo as informações do encontro?",
     answer:
-      "Você receberá todas as informações necessárias em até 15 dias antes do congresso. Assim que fizer a inscrição, entre no grupo de WhatsApp das participantes para acompanhar os avisos.",
+      "Você receberá pelo WhatsApp a programação e o regulamento com as orientações 1 mês antes do evento.",
   },
   {
-    question: "Como entro no grupo do WhatsApp?",
+    question: "Há transporte por parte do evento?",
     answer:
-      "O grupo é das inscritas no congresso, não o WhatsApp de dúvidas. O convite está na seção de inscrição e também no rodapé do site, em “Entrar no grupo”.",
-  },
-  {
-    question: "Posso enviar um pedido de oração?",
-    answer:
-      "Sim. Qualquer pessoa pode deixar um pedido confidencial na página de oração. Somente a organização do Me Refugiar lê os pedidos — eles não são publicados no site.",
+      "Não. A responsabilidade do deslocamento é da inscrita. Nossa equipe pode apoiar nas possibilidades de carona entre as inscritas.",
   },
 ] as const;
 
