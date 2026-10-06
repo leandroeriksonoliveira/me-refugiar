@@ -17,10 +17,9 @@ export default function TermosPage() {
       </p>
       <h2 className="font-serif text-2xl text-earth">1. Inscrição e pagamento</h2>
       <p>
-        A vaga só é considerada confirmada após a liquidação do pagamento via PIX
-        ou a autorização da transação no cartão de crédito, processados pela API
-        do Asaas. Valores, lotes e benefícios podem ser atualizados sem aviso
-        prévio até a conclusão da compra.
+        A vaga só é considerada confirmada após a confirmação do pagamento pela
+        organização. Valores, lotes e benefícios podem ser atualizados sem aviso
+        prévio até a confirmação da inscrição.
       </p>
       <h2 className="font-serif text-2xl text-earth">2. Cancelamento</h2>
       <p>

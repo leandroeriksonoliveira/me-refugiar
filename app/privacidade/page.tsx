@@ -12,42 +12,34 @@ export default function PrivacidadePage() {
     <LegalPage title="Política de privacidade">
       <p>
         Esta política descreve como o {siteConfig.name} Mulheres coleta e utiliza
-        dados pessoais para realizar inscrições, pagamentos e comunicação com as
+        dados pessoais para realizar inscrições e comunicação com as
         participantes, em conformidade com a Lei Geral de Proteção de Dados
         (LGPD).
       </p>
       <h2 className="font-serif text-2xl text-earth">1. Dados coletados</h2>
       <p>
-        Nome completo, CPF, e-mail, telefone/WhatsApp, cidade, estado e, quando
-        o pagamento for no cartão, dados necessários à autorização da transação
-        (incluindo CEP e número do endereço do titular).
+        Os dados informados no formulário de inscrição, como nome completo,
+        e-mail, telefone/WhatsApp, cidade e estado.
       </p>
-      <h2 className="font-serif text-2xl text-earth">2. Pagamentos</h2>
+      <h2 className="font-serif text-2xl text-earth">2. Finalidade</h2>
       <p>
-        Os pagamentos são processados pelo Asaas. Os dados de cartão são
-        transmitidos de forma segura para a API do Asaas e não ficam armazenados
-        neste site. O PIX utiliza QR Code dinâmico e código copia e cola gerados
-        na hora.
+        Usamos seus dados para confirmar a inscrição, enviar informações do
+        evento e prestar suporte. Não vendemos dados a terceiros.
       </p>
-      <h2 className="font-serif text-2xl text-earth">3. Finalidade</h2>
-      <p>
-        Usamos seus dados para emitir a cobrança, confirmar a inscrição, enviar
-        informações do evento e prestar suporte. Não vendemos dados a terceiros.
-      </p>
-      <h2 className="font-serif text-2xl text-earth">4. Direitos da titular</h2>
+      <h2 className="font-serif text-2xl text-earth">3. Direitos da titular</h2>
       <p>
         Você pode solicitar acesso, correção ou exclusão dos seus dados pelo
         WhatsApp de suporte, ressalvadas as obrigações legais de guarda de
         registros financeiros.
       </p>
-      <h2 className="font-serif text-2xl text-earth">5. Pedidos de oração</h2>
+      <h2 className="font-serif text-2xl text-earth">4. Pedidos de oração</h2>
       <p>
         Os pedidos enviados pelo formulário de oração são lidos apenas pela
         organização do {siteConfig.name}, para intercessão. Não são publicados,
         compartilhados ou usados para marketing. Você pode escrever de forma
         anônima, sem informar o nome.
       </p>
-      <h2 className="font-serif text-2xl text-earth">6. Contato</h2>
+      <h2 className="font-serif text-2xl text-earth">5. Contato</h2>
       <p>
         Para exercer direitos previstos na LGPD, fale com a organização do
         {` ${siteConfig.name}`} pelos canais oficiais do site.
