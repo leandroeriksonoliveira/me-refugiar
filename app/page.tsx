@@ -1,5 +1,4 @@
 import { About } from "@/components/about";
-import { EditionVideo } from "@/components/edition-video";
 import { FAQ } from "@/components/faq";
 import { Footer } from "@/components/footer";
 import { Gallery } from "@/components/gallery";
@@ -23,7 +22,6 @@ export default function Home() {
         <About />
         <Schedule />
         <Testimonials />
-        <EditionVideo />
         <Story />
         <Gallery />
         <Partnership />

@@ -16,6 +16,8 @@ export const siteConfig = {
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5531992898159",
   whatsappMessage:
     "Olá! Gostaria de saber mais sobre o Me Refugiar Mulheres.",
+  registrationUrl:
+    "https://docs.google.com/forms/d/e/1FAIpQLSdjw-k38nle3g8WTEVvj9UY_R_k29k1uYDX2lTVN3BcvjErFg/viewform",
   whatsappGroupUrl:
     "https://chat.whatsapp.com/FURcmkmd5vb0zPCeYkSh8z?s=sh&p=a&ilr=1",
   social: {
@@ -149,15 +151,6 @@ export const galleryImages = [
   },
 ] as const;
 
-export const editionVideo: {
-  title: string;
-  src: string;
-  youtubeId?: string;
-} = {
-  title: "Vídeo da edição anterior do Me Refugiar Mulheres",
-  src: "/videos/edicao-anterior.mp4",
-};
-
 export const testimonials = [
   {
     quote:
@@ -232,11 +225,6 @@ export const faqs = [
     question: "O evento é apenas para mulheres?",
     answer:
       "Sim. O Me Refugiar é um encontro exclusivo para mulheres adultas. É um espaço seguro, acolhedor e dedicado à restauração feminina.",
-  },
-  {
-    question: "Como funciona o pagamento?",
-    answer:
-      "Você pode pagar via PIX (QR Code dinâmico ou copia e cola). A confirmação do PIX é automática assim que o banco liquida a cobrança. E também parcelado no cartão.",
   },
   {
     question: "Quando recebo as informações do encontro?",
